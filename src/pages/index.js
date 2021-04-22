@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, Content, Card } from "../components"
-import { P, H1, H3, SocialsWrapper } from "../styles"
+import { P, H1, H3, SocialsWrapper, SocialsButton } from "../styles"
 import { graphql } from "gatsby"
 import {
   FaGithub,
@@ -19,21 +19,34 @@ const IndexPage = ({ data }) => {
           <H1>Gokul Suresh</H1>
           <H3>software developer</H3>
           <SocialsWrapper>
-            <a href="https://github.com/xenomech/" alt="github">
-              <FaGithub />
-            </a>
-            <a href="www.linkedin.com/in/gokulsmenon227" alt="linkedin">
-              <FaLinkedin />
-            </a>
-            <a href="www.twitter.com">
-              <FaTwitter />
-            </a>
-            <a href="www.snapchat.com">
-              <FaSnapchatGhost />
-            </a>
-            <a href="mailto:gokulsmenon227@gmail.com">
-              <FiMail />
-            </a>
+            <SocialsButton bg="github">
+              <a href="https://github.com/xenomech/" alt="github">
+                <FaGithub />
+              </a>
+            </SocialsButton>
+            <SocialsButton bg="linkedin">
+              <a href="www.linkedin.com/in/gokulsmenon227" alt="linkedin">
+                <FaLinkedin />
+              </a>
+            </SocialsButton>
+
+            <SocialsButton bg="twitter">
+              <a href="www.twitter.com">
+                <FaTwitter />
+              </a>
+            </SocialsButton>
+
+            <SocialsButton bg="snapchat">
+              <a href="www.snapchat.com">
+                <FaSnapchatGhost />
+              </a>
+            </SocialsButton>
+
+            <SocialsButton bg="mail">
+              <a href="mailto:gokulsmenon227@gmail.com">
+                <FiMail />
+              </a>
+            </SocialsButton>
           </SocialsWrapper>
           <P>
             Hey!

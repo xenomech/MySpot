@@ -14,17 +14,47 @@ export const ContentWrapper = styled.main`
   }
 `
 export const SocialsWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  grid-template-columns: auto auto auto auto auto;
   font-size: 2rem;
   flex: wrap;
   padding: 1rem 0rem;
+  align-content: center;
+  justify-content: start;
+  @media only screen and (max-width: 50rem) {
+    grid-template-columns: auto auto auto;
+  }
+`
+export const SocialsButton = styled.div`
+  padding: 0.5rem 0.5rem;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0.5rem;
   a {
-    color: ${props => props.theme.colors.sysGrayLight3};
-    padding: 0.5rem;
-    transition: color 0.5s ease;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
     &:hover,
     &:focus {
-      color: white;
+      color: ${props => {
+        switch (props.bg) {
+          case "github":
+            return "white"
+          case "snapchat":
+            return props.theme.colors.sysYellowDark
+          case "linkedin":
+            return props.theme.colors.sysIndigoDark
+          case "twitter":
+            return props.theme.colors.sysBlueDark
+          case "mail":
+            return props.theme.colors.sysRedDark
+          default:
+            return "white"
+        }
+      }};
     }
   }
 `

@@ -1,6 +1,8 @@
 import React from "react"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
+import { MDXProvider } from "@mdx-js/react"
 import Theme from "./src/themes/theme"
+import { Table } from "./src/components"
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -12,13 +14,19 @@ const GlobalStyle = createGlobalStyle`
     height:100%;
     font-family:${props => props.theme.font.main};
     background-color:${props => props.theme.colors.sysGrayDark6};
-    color:${props => props.theme.colors.sysGrayDark1};
+    color:white;
   
   }
 `
+
+const components = {
+  table: Table,
+}
 export const wrapRootElement = ({ element }) => (
-  <ThemeProvider theme={Theme}>
-    <GlobalStyle />
-    {element}
-  </ThemeProvider>
+  <MDXProvider components={components}>
+    <ThemeProvider theme={Theme}>
+      <GlobalStyle />
+      {element}
+    </ThemeProvider>
+  </MDXProvider>
 )

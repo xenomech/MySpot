@@ -1,7 +1,14 @@
 import React from "react"
 import { Container, Content, Card } from "../components"
-import { P, H1, H3 } from "../styles"
+import { P, H1, H3, SocialsWrapper } from "../styles"
 import { graphql } from "gatsby"
+import {
+  FaGithub,
+  FaTwitter,
+  FaLinkedin,
+  FaSnapchatGhost,
+} from "react-icons/fa"
+import { FiMail } from "react-icons/fi"
 
 const IndexPage = ({ data }) => {
   const posts = data.allMdx.edges
@@ -11,7 +18,23 @@ const IndexPage = ({ data }) => {
         <div>
           <H1>Gokul Suresh</H1>
           <H3>software developer</H3>
-          <socials></socials>
+          <SocialsWrapper>
+            <a>
+              <FaGithub />
+            </a>
+            <a>
+              <FaLinkedin />
+            </a>
+            <a>
+              <FaTwitter />
+            </a>
+            <a>
+              <FaSnapchatGhost />
+            </a>
+            <a>
+              <FiMail />
+            </a>
+          </SocialsWrapper>
           <P>
             Hey!
             <span role="img" aria-label="Waving Hand Sign">
@@ -19,7 +42,9 @@ const IndexPage = ({ data }) => {
             </span>
             <br /> My name is Gokul! Welcome to my spot on the web. I am a
             self-taught developer from Kochi, Kerala. I like building and
-            occasionally designing apps and websites. I love listening to music!FOSS
+            occasionally designing apps and websites. I love listening to music,
+            rising Linux distros, and trying out different setups! I started
+            this blog to keep track of the things I do!
           </P>
         </div>
         <div style={{ padding: "2rem 0rem" }}>

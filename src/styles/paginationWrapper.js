@@ -9,13 +9,17 @@ export const PaginationWrapper = styled.div`
   padding: 3rem;
   a:nth-child(1) {
     color: ${props =>
-      props.isFirst ? "rgb(160, 160, 165)" : "rgb(30, 30, 30)"};
+      props.isFirst
+        ? props.theme.colors.sysGrayDark2
+        : props.theme.colors.sysGrayLight6};
     pointer-events: ${props => (props.isFirst ? "none" : "auto")};
     cursor: ${props => (props.isFirst ? "default" : "pointer")};
   }
   a:nth-child(2) {
     color: ${props =>
-      props.isLast ? "rgb(160, 160, 165)" : "rgb(30, 30, 30)"};
+      props.isLast
+        ? props.theme.colors.sysGrayDark2
+        : props.theme.colors.sysGrayLight6};
     pointer-events: ${props => (props.isLast ? "none" : "auto")};
     cursor: ${props => (props.isLast ? "default" : "pointer")};
   }

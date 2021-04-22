@@ -13,3 +13,18 @@ export const ContentWrapper = styled.main`
     margin: 0.5rem;
   }
 `
+export const SocialsWrapper = styled.div`
+  display: flex;
+  font-size: 2rem;
+  flex: wrap;
+  padding: 1rem 0rem;
+  a {
+    color: ${props => props.theme.colors.sysGrayLight3};
+    padding: 0.5rem;
+    transition: color 0.5s ease;
+    &:hover,
+    &:focus {
+      color: white;
+    }
+  }
+`

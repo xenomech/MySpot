@@ -19,10 +19,10 @@ export const P = styled.p`
       case "xxlarge":
         return "6rem"
       default:
-        return "1.125rem"
+        return "1.5rem"
     }
   }};
-  line-height: 1rem;
+  line-height: 2.5rem;
   padding: 1rem 0rem;
   color: ${props => {
     switch (props.color) {
@@ -92,7 +92,7 @@ export const P = styled.p`
       case "sysYellowDark":
         return "rgb(255,214,10)"
       default:
-        return "rgb(142,142,147)"
+        return "white"
     }
   }};
   text-decoration: ${props =>
@@ -179,12 +179,12 @@ export const H1 = styled.h1`
       case "sysYellowDark":
         return "rgb(255,214,10)"
       default:
-        return "rgb(142,142,147)"
+        return "white"
     }
   }};
 
   font-size: 2.25;
-  line-height: 2;
+  /* line-height: 2; */
 
   text-align: ${props => (props.textAlign ? props.textAlign : "left")};
   font-weight: 400;
@@ -193,7 +193,7 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h2`
   font-size: 1.5rem;
-  line-height: 1.5rem;
+  /* line-height: 1.5rem; */
   color: ${props => {
     switch (props.color) {
       case "sysGrayLight1":
@@ -262,7 +262,7 @@ export const H2 = styled.h2`
       case "sysYellowDark":
         return "rgb(255,214,10)"
       default:
-        return "rgb(142,142,147)"
+        return "white"
     }
   }};
 
@@ -341,7 +341,7 @@ export const H3 = styled.h3`
       case "sysYellowDark":
         return "rgb(255,214,10)"
       default:
-        return "rgb(142,142,147)"
+        return "white"
     }
   }};
 
@@ -418,7 +418,7 @@ export const A = styled.a`
       case "sysYellowDark":
         return "rgb(255,214,10)"
       default:
-        return "rgb(142,142,147)"
+        return "white"
     }
   }};
 

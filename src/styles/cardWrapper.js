@@ -6,10 +6,18 @@ export const CardWrapper = styled.div`
   align-items: center;
   border-radius: 1rem;
 
-  transition: box-shadow ease 0.5s;
+  transition: background-color 1s ease;
 
   &:hover,
   &:focus {
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    background-color: ${props => props.theme.colors.sysGrayDark4};
+    /* box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); */
+  }
+  @media ${props => props.theme.breakpoints.tablet} {
+    padding: 0.5rem;
+    margin: 0rem;
+  }
+
+  @media ${props => props.theme.breakpoints.phone} {
   }
 `

@@ -5,9 +5,9 @@ export const Card = ({ date, slug, exerpt, title }) => {
     <CardWrapper>
       <A href={slug}>
         <H2>{title}</H2>
-        <p>{date}</p>
-        <p>{exerpt}</p>
       </A>
+      <p>{date}</p>
+      <p>{exerpt}</p>
     </CardWrapper>
   )
 }

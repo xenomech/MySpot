@@ -7,9 +7,11 @@ export const NavWrapper = styled.nav`
   /* flex-wrap: wrap; */
   font-size: 1.6rem;
   padding: 1.5rem 10rem;
+  /* position: fixed;
+  top: 0; */
   /* background-color: ${props => props.theme.colors.sysGrayDark4}; */
   @media ${props => props.theme.breakpoints.tablet} {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding: 1.5rem 0.5rem;
   }
   @media ${props => props.theme.breakpoints.mobile} {
@@ -17,7 +19,7 @@ export const NavWrapper = styled.nav`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding: 1.5rem 0.5rem;
   }
 `
@@ -35,7 +37,7 @@ export const NavLinks = styled.div`
   }
 
   @media ${props => props.theme.breakpoints.mobile} {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding-top: 0.2rem;
   }
 `

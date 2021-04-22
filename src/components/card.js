@@ -1,5 +1,5 @@
 import React from "react"
-import { CardWrapper, H2, P } from "../styles"
+import { CardWrapper, H2, A } from "../styles"
 export const Card = ({ date, slug, exerpt, title }) => {
   return (
     <CardWrapper>

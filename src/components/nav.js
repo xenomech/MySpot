@@ -17,9 +17,6 @@ export const Nav = () => {
         <Link to="/projects">
           <strong>02 </strong>Projects
         </Link>
-        <Link to="/contact">
-          <strong>03 </strong>Contact
-        </Link>
       </NavLinks>
     </NavWrapper>
   )

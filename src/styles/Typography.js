@@ -91,6 +91,8 @@ export const P = styled.p`
         return "rgb(100,210,255)"
       case "sysYellowDark":
         return "rgb(255,214,10)"
+      default:
+        return "rgb(142,142,147)"
     }
   }};
   text-decoration: ${props =>
@@ -176,6 +178,8 @@ export const H1 = styled.h1`
         return "rgb(100,210,255)"
       case "sysYellowDark":
         return "rgb(255,214,10)"
+      default:
+        return "rgb(142,142,147)"
     }
   }};
 
@@ -257,6 +261,8 @@ export const H2 = styled.h2`
         return "rgb(100,210,255)"
       case "sysYellowDark":
         return "rgb(255,214,10)"
+      default:
+        return "rgb(142,142,147)"
     }
   }};
 
@@ -334,6 +340,8 @@ export const H3 = styled.h3`
         return "rgb(100,210,255)"
       case "sysYellowDark":
         return "rgb(255,214,10)"
+      default:
+        return "rgb(142,142,147)"
     }
   }};
 
@@ -409,6 +417,8 @@ export const A = styled.a`
         return "rgb(100,210,255)"
       case "sysYellowDark":
         return "rgb(255,214,10)"
+      default:
+        return "rgb(142,142,147)"
     }
   }};
 

@@ -6,7 +6,7 @@ export const FooterWrapper = styled.footer`
   align-items: center;
   font-size: 1rem;
   padding: 1.5rem 10rem;
-  /* background-color: ${props => props.theme.colors.sysGrayDark4}; */
+  background-color: ${props => props.theme.colors.sysGrayDark4};
   text-align: center;
   @media ${props => props.theme.breakpoints.tablet} {
     font-size: 1rem;

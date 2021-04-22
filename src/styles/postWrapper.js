@@ -79,10 +79,11 @@ export const PostWrapper = styled.main`
     ${"" /* font-family: "Roboto", sans-serif; */}
     font-size:1rem;
     line-height: 1.75rem;
-    margin: 1rem;
-    padding: 0 0.3rem;
-    color: white;
-    background-color: ${props => props.theme.colors.sysGrayDark5};
+    margin: 2rem;
+    padding: 2rem 0.3rem;
+    
+    /* color: white; */
+    /* background-color: ${props => props.theme.colors.sysGrayDark2}; */
   }
   del {
     text-decoration: line-through;

@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 export const PaginationWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 3rem;
   a:nth-child(1) {
     color: ${props =>

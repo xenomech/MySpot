@@ -81,7 +81,7 @@ export const PostWrapper = styled.main`
     line-height: 1.75rem;
     margin: 2rem;
     padding: 2rem 0.3rem;
-    
+
     /* color: white; */
     /* background-color: ${props => props.theme.colors.sysGrayDark2}; */
   }
@@ -91,13 +91,14 @@ export const PostWrapper = styled.main`
   hr {
     border: 0;
     height: 1px;
-    background:${props => props.theme.colors.sysGrayDark4};
+    background: ${props => props.theme.colors.sysGrayDark4};
     opacity: 0.1;
     margin-top: 2rem;
   }
   ul,
   ol {
-    margin: 1rem;
+    margin: 0.5rem;
+    padding: 1rem;
   }
   li {
     margin: 0.025rem;
@@ -117,7 +118,7 @@ export const PostWrapper = styled.main`
   table,
   th,
   td {
-    border: 1px solid ${props=>props.theme.colors.sysGrayDark1};
+    border: 1px solid ${props => props.theme.colors.sysGrayDark1};
   }
   th,
   td {

@@ -42,7 +42,7 @@ export const SocialsButton = styled.div`
       color: ${props => {
         switch (props.bg) {
           case "github":
-            return "white"
+            return props.theme.colors.sysTealDark
           case "snapchat":
             return props.theme.colors.sysYellowDark
           case "linkedin":

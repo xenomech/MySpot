@@ -2,9 +2,6 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: {
-        ssr: true,
-      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -48,6 +45,15 @@ module.exports = {
       options: {
         fonts: [`Roboto`, `Open Sans`],
         display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: false,
       },
     },
   ],

@@ -28,13 +28,12 @@ const components = {
     if (props) {
       return <Code {...props} />
     }
-      // it's possible to have a pre without a code in it
-      return <pre {...preProps} />
-    
+    // it's possible to have a pre without a code in it
+    return <pre {...preProps} />
   },
   wrapper: ({ children }) => <>{children}</>,
 }
-export const wrapRootElement = ({ element }) => (
+export const wrapPageElement = ({ element }) => (
   <MDXProvider components={components}>
     <ThemeProvider theme={Theme}>
       <GlobalStyle />

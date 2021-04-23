@@ -1,14 +1,5 @@
 module.exports = {
   plugins: [
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        short_name: `blog`,
-        start_url: `/`,
-        background_color: `#1C1C1E`,
-      },
-    },
-
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

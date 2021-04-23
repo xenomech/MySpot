@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
     font-family:${props => props.theme.font.main};
     background-color:${props => props.theme.colors.sysGrayDark6};
     color:white;
-  
   }
 `
 //pre to code blocks from https://www.christopherbiscardi.com/post/codeblocks-mdx-and-mdx-utils
@@ -33,7 +32,7 @@ const components = {
   },
   wrapper: ({ children }) => <>{children}</>,
 }
-export const wrapRootElement = ({ element }) => (
+export const wrapPageElement = ({ element }) => (
   <MDXProvider components={components}>
     <ThemeProvider theme={Theme}>
       <GlobalStyle />

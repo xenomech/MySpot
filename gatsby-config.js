@@ -1,8 +1,16 @@
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Yusong Blog`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#1C1C1E`,
+      },
     },
+
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -45,15 +53,6 @@ module.exports = {
       options: {
         fonts: [`Roboto`, `Open Sans`],
         display: "swap",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `tomato`,
-        // Disable the loading spinner.
-        showSpinner: false,
       },
     },
   ],

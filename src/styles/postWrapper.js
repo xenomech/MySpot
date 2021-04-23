@@ -23,12 +23,12 @@ export const PostWrapper = styled.main`
   h1 {
     font-size: 2.25rem;
     line-height: 2.25rem;
-    font-weight: 400;
+    font-weight: 700;
   }
   h2 {
     font-size: 1.5rem;
     line-height: 1.875rem;
-    font-weight: 400;
+    font-weight: 700;
   }
   h3 {
     font-size: 1.375rem;
@@ -58,7 +58,7 @@ export const PostWrapper = styled.main`
   }
 
   a {
-    color: ${props => props.theme.colors.sysRedDark};
+    color: ${props => props.theme.colors.sysBlueDark};
   }
   em {
     font-style: italic;

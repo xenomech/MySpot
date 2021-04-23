@@ -16,7 +16,7 @@ export const PageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
-            exerpt
+            excerpt
           }
         }
       }
@@ -31,8 +31,9 @@ const allPost = ({ pageContext, data }) => {
   const isLast = numPages === currentpage
   const prevPage = currentpage - 1 === 1 ? "/blog/" : `/blog/${currentpage - 1}`
   const nextPage = `/blog/${currentpage + 1}`
-  console.log(numPages, currentpage)
+
   const posts = data.allMdx.edges
+  console.log(posts)
   return (
     <Container>
       <div style={{ minWidth: "70%" }}>
@@ -42,7 +43,7 @@ const allPost = ({ pageContext, data }) => {
               key={`/blog/${post.node.frontmatter.slug}`}
               date={post.node.frontmatter.date}
               title={post.node.frontmatter.title}
-              exerpt={post.node.frontmatter.exerpt}
+              excerpt={post.node.frontmatter.excerpt}
               slug={`/blog/${post.node.frontmatter.slug}`}
             />
           ))}

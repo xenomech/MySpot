@@ -1,0 +1,25 @@
+{
+    "grammarly.overrides": [
+        {
+            "files": [
+                "**/src/posts/GettingStartedWithGatsby/index.mdx"
+            ],
+            "config": {
+                "audience": "general",
+                "dialect": "american",
+                "domain": "casual",
+                "emotions": [
+                    "neutral",
+                    "confident",
+                    "joyful",
+                    "optimistic"
+                ],
+                "goals": [
+                    "inform",
+                    "describe",
+                    "tellStory"
+                ]
+            }
+        }
+    ]
+}

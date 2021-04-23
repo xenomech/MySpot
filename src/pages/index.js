@@ -56,7 +56,7 @@ const IndexPage = ({ data }) => {
             <br /> My name is Gokul! Welcome to my spot on the web. I am a
             self-taught developer from Kochi, Kerala. I like building and
             occasionally designing apps and websites. I love listening to music,
-            rising Linux distros, and trying out different setups! I started
+            ricing Linux distros, and trying out different setups! I started
             this blog to keep track of the things I do!
           </P>
         </div>
@@ -67,7 +67,7 @@ const IndexPage = ({ data }) => {
               key={`/blog/${post.node.frontmatter.slug}`}
               date={post.node.frontmatter.date}
               title={post.node.frontmatter.title}
-              exerpt={post.node.frontmatter.exerpt}
+              excerpt={post.node.frontmatter.excerpt}
               slug={`/blog/${post.node.frontmatter.slug}`}
             />
           ))}
@@ -87,7 +87,7 @@ export const PageQuery = graphql`
             slug
             title
             date(formatString: "MMMM DD, YYYY")
-            exerpt
+            excerpt
           }
           id
         }

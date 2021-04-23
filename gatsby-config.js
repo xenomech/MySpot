@@ -3,8 +3,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Yusong Blog`,
-        short_name: `starter`,
+        short_name: `blog`,
         start_url: `/`,
         background_color: `#1C1C1E`,
       },

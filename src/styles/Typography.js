@@ -425,6 +425,5 @@ export const A = styled.a`
   text-decoration: none;
   &:hover,
   &:focus {
-    text-decoration: underline;
   }
 `

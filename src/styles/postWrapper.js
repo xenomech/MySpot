@@ -17,10 +17,11 @@ export const PostWrapper = styled.main`
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  p {
     margin-top: 2rem;
   }
-  h1 {
+  /* h1 {
     font-size: 2.25rem;
     line-height: 2.25rem;
     font-weight: 700;
@@ -55,10 +56,11 @@ export const PostWrapper = styled.main`
     line-height: 1.875rem;
     font-weight: 400;
     margin-top: 2rem;
-  }
+  } */
 
   a {
-    color: ${props => props.theme.colors.sysBlueDark};
+    color: ${props => props.theme.colors.sysBlueLight};
+    word-wrap: break-word;
   }
   em {
     font-style: italic;
@@ -66,7 +68,6 @@ export const PostWrapper = styled.main`
   blockquote p {
     font-style: italic;
     padding: 1rem;
-    line-height: 2.125rem;
     border-left: ${props => props.theme.colors.sysPinkDark} solid 3px;
     background-color: ${props => props.theme.colors.sysGrayDark4};
     margin: 3rem auto;
@@ -77,13 +78,8 @@ export const PostWrapper = styled.main`
 
   code {
     ${"" /* font-family: "Roboto", sans-serif; */}
-    font-size:1rem;
-    line-height: 1.75rem;
     margin: 2rem;
     padding: 2rem 0.3rem;
-
-    /* color: white; */
-    /* background-color: ${props => props.theme.colors.sysGrayDark2}; */
   }
   del {
     text-decoration: line-through;
@@ -101,16 +97,16 @@ export const PostWrapper = styled.main`
     padding: 1rem;
   }
   li {
-    margin: 0.025rem;
+    margin: 0.5rem;
   }
 
   table {
     width: 100%;
     border-spacing: 0.25rem;
     border-collapse: collapse;
-    font-weight: 1rem;
+    /* font-size: 1rem;
     line-height: 1.5rem;
-    font-weight: 400;
+    font-weight: 400; */
   }
   th {
     font-weight: 700;

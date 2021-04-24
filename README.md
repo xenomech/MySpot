@@ -7,7 +7,7 @@
 You are in my spot!
 </h1>
 Yeah, it's a Big Bang Theory reference!
-I build this blog to talk about things I love and to keep notes of things I have worked with!
+I made this blog to talk about things I love and to keep notes of things I have worked with!
 
 ### Visit @ [xenomech.netlify.app](https://xenomech.netlify.app)
 

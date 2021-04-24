@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Content, Card } from "../components"
+import { Container, Content, Card, Seo } from "../components"
 import { P, H1, H3, SocialsWrapper, SocialsButton } from "../styles"
 import { graphql } from "gatsby"
 import {
@@ -14,6 +14,7 @@ const IndexPage = ({ data }) => {
   const posts = data.allMdx.edges
   return (
     <Container>
+      <Seo />
       <Content>
         <div>
           <H1>Gokul Suresh</H1>

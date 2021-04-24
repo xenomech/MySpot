@@ -29,26 +29,26 @@ export const LangTabscontainer = styled.div`
 export const LangTabs = styled.div`
   background-color: ${props => {
     switch (props.lang) {
-      case "React":
-        return props.theme.colors.sysIndigoDark
-      case "Flutter":
-        return props.theme.colors.sysBlueDark
-      case "Gatsby":
-        return props.theme.colors.sysPurpleDark
-      case "Python":
-        return props.theme.colors.sysTealDark
-      case "JS":
-        return props.theme.colors.sysYellowDark
-      case "HTML":
-        return props.theme.colors.sysRedDark
-      case "CSS":
-        return props.theme.colors.sysBlueDark
-      case "Dart":
-        return props.theme.colors.sysIndigoDark
-      case "MDX":
-        return "black"
+      // case "React":
+      //   return props.theme.colors.sysIndigoDark
+      // case "Flutter":
+      //   return props.theme.colors.sysBlueDark
+      // case "Gatsby":
+      //   return props.theme.colors.sysPurpleDark
+      // case "Python":
+      //   return props.theme.colors.sysTealDark
+      // case "JS":
+      //   return props.theme.colors.sysYellowDark
+      // case "HTML":
+      //   return props.theme.colors.sysRedDark
+      // case "CSS":
+      //   return props.theme.colors.sysBlueDark
+      // case "Dart":
+      //   return props.theme.colors.sysIndigoDark
+      // case "MDX":
+      //   return "black"
       default:
-        return props.theme.colors.sysGrayDark2
+        return props.theme.colors.sysGrayDark5
     }
   }};
   padding: 5px 20px;

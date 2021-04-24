@@ -23,7 +23,8 @@ export const P = styled.p`
     }
   }};
   line-height: 2.5rem;
-  padding: 1rem 0rem;
+  padding: ${props => (props.padding ? props.padding : 0)};
+
   color: ${props => {
     switch (props.color) {
       // case "sysGrayLight1":

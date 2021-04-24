@@ -17,23 +17,29 @@ export const Seo = ({ description, keywords, title, author }) => {
           "gatsby blog",
         ]
         return (
-          <Helmet
-            title={title}
-            meta={[
-              { name: `description`, content: metaDescription },
-              { property: `og:title`, content: metaTitle },
-              { property: `og:description`, content: metaDescription },
-              { property: `og:type`, content: "website" },
-              { property: `og:author`, content: metaAuthor },
-            ].concat(
-              metaKeywords && metaKeywords.leght > 0
-                ? {
-                    name: `keywords`,
-                    content: metaKeywords.join(`, `),
-                  }
-                : []
-            )}
-          />
+          <>
+            <Helmet
+              title={title}
+              meta={[
+                { name: `description`, content: metaDescription },
+                { property: `og:title`, content: metaTitle },
+                { property: `og:description`, content: metaDescription },
+                { property: `og:type`, content: "website" },
+                { property: `og:author`, content: metaAuthor },
+              ].concat(
+                metaKeywords && metaKeywords.leght > 0
+                  ? {
+                      name: `keywords`,
+                      content: metaKeywords.join(`, `),
+                    }
+                  : []
+              )}
+            >
+              <html lang="en" />
+              <title>{metaTitle}</title>
+              <meta name={metaDescription} />
+            </Helmet>
+          </>
         )
       }}
     />

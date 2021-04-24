@@ -7,6 +7,7 @@ module.exports = {
     author: "Gokul Suresh",
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -1,9 +1,10 @@
 import styled from "styled-components"
 
 export const ContentWrapper = styled.main`
-  padding: 3rem 7rem;
-  margin: 0.5rem 7rem;
+  padding: 3rem 10rem;
+  margin: 0.5rem 10rem;
   font-size: 1.25rem;
+  flex: 1 0 auto;
   @media only screen and (max-width: 65rem) {
     padding: 0.5rem;
     margin: 0.5rem;

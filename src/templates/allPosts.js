@@ -36,7 +36,7 @@ const allPost = ({ pageContext, data }) => {
   console.log(posts)
   return (
     <Container>
-      <div style={{ minWidth: "70%" }}>
+      {/* <div style={{ minWidth: "70%" }}> */}
         <Content>
           {posts.map(post => (
             <Card
@@ -54,7 +54,7 @@ const allPost = ({ pageContext, data }) => {
           prevPage={prevPage}
           nextPage={nextPage}
         />
-      </div>
+      {/* </div> */}
     </Container>
   )
 }

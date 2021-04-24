@@ -8,6 +8,8 @@ export const FooterWrapper = styled.footer`
   padding: 0.5rem 10rem;
   background-color: ${props => props.theme.colors.sysGrayDark4};
   text-align: center;
+  flex-shrink: 0;
+
   @media ${props => props.theme.breakpoints.tablet} {
     font-size: 1rem;
     padding: 0.5rem 0.5rem;

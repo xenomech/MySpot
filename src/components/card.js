@@ -1,6 +1,6 @@
 import React from "react"
-import { CardWrapper, H2, A } from "../styles"
-export const Card = ({ date, slug, excerpt, title }) => {
+import { CardWrapper, LangTabs, LangTabscontainer, H2, A } from "../styles"
+export const Card = ({ date, slug, excerpt, title, langtabs }) => {
   return (
     <CardWrapper>
       <A href={slug}>
@@ -8,6 +8,11 @@ export const Card = ({ date, slug, excerpt, title }) => {
       </A>
       <p>{date}</p>
       <p>{excerpt}</p>
+      <LangTabscontainer>
+        {langtabs.map(lang => {
+          return <LangTabs lang={lang}>{lang}</LangTabs>
+        })}
+      </LangTabscontainer>
     </CardWrapper>
   )
 }

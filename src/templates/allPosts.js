@@ -16,6 +16,7 @@ export const PageQuery = graphql`
             slug
             title
             excerpt
+            langtabs
           }
         }
       }
@@ -44,6 +45,7 @@ const allPost = ({ pageContext, data }) => {
             date={post.node.frontmatter.date}
             title={post.node.frontmatter.title}
             excerpt={post.node.frontmatter.excerpt}
+            langtabs={post.node.frontmatter.langtabs}
             slug={`/blog/${post.node.frontmatter.slug}`}
           />
         ))}

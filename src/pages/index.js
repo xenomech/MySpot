@@ -70,6 +70,7 @@ const IndexPage = ({ data }) => {
               title={post.node.frontmatter.title}
               excerpt={post.node.frontmatter.excerpt}
               slug={`/blog/${post.node.frontmatter.slug}`}
+              langtabs={post.node.frontmatter.langtabs}
             />
           ))}
         </div>
@@ -89,6 +90,7 @@ export const PageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             excerpt
+            langtabs
           }
           id
         }

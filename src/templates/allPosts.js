@@ -1,8 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Container, Content, Pagination,Card } from "../components"
+import { Seo, Container, Content, Pagination, Card } from "../components"
 // import { H1, P } from "../styles"
-
 export const PageQuery = graphql`
   query AllPostQuery($skip: Int!, $limit: Int!) {
     allMdx(
@@ -36,24 +35,25 @@ const allPost = ({ pageContext, data }) => {
   console.log(posts)
   return (
     <Container>
+      <Seo />
       {/* <div style={{ minWidth: "70%" }}> */}
-        <Content>
-          {posts.map(post => (
-            <Card
-              key={`/blog/${post.node.frontmatter.slug}`}
-              date={post.node.frontmatter.date}
-              title={post.node.frontmatter.title}
-              excerpt={post.node.frontmatter.excerpt}
-              slug={`/blog/${post.node.frontmatter.slug}`}
-            />
-          ))}
-        </Content>
-        <Pagination
-          isFirst={isFirst}
-          isLast={isLast}
-          prevPage={prevPage}
-          nextPage={nextPage}
-        />
+      <Content>
+        {posts.map(post => (
+          <Card
+            key={`/blog/${post.node.frontmatter.slug}`}
+            date={post.node.frontmatter.date}
+            title={post.node.frontmatter.title}
+            excerpt={post.node.frontmatter.excerpt}
+            slug={`/blog/${post.node.frontmatter.slug}`}
+          />
+        ))}
+      </Content>
+      <Pagination
+        isFirst={isFirst}
+        isLast={isLast}
+        prevPage={prevPage}
+        nextPage={nextPage}
+      />
       {/* </div> */}
     </Container>
   )

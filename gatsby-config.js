@@ -1,5 +1,22 @@
 module.exports = {
+  siteMetadata: {
+    title: "xenomech",
+    description: "All my scribbles are available here",
+    // url: "",
+    twitterUsername: "xen40k",
+    author: "Gokul Suresh",
+  },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "xenomech's blog",
+        description: "All my scribbles are available here",
+        lang: `en`,
+        display: `standalone`,
+        icon: "src/images/gatsby-icon.svg",
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

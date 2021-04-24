@@ -30,7 +30,7 @@ I build this blog to talk about things I love and to keep notes of things I have
 
 [`Netlify`](https://www.netlify.com/)
 
-<p textalign="center">
+<p align="center">
 <a href="https://www.netlify.com/">Netlify</a> |
 <a href="https://www.gatsbyjs.com/">Gatsby</a> |
 <a href="https://reactjs.org/">React</a> |

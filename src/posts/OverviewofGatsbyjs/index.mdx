@@ -25,7 +25,7 @@ Gatsby is a static site generator(SSG), which uses React and GraphQL. It follows
 
 ## What is an SSG?
 
-SSG stands for Static Site Generator. An SSG takes in templates, components, data and provides you with a static HTML page. Static site generators are an alternative to database-driven content management.
+SSG stands for Static Site Generator. An SSG takes in templates, components, data and provides us with a static HTML page. Static site generators are an alternative to database-driven content management.
 
 ## 1. The initial setup
 
@@ -51,13 +51,13 @@ Before setting up Gatsby, we need to install some prerequisites.
 
 2. **The gatsby-cli**
 
-   The Gatsby CLI tool lets you run gatsby commands on the command line. It is an npm package that we need to install.
+   The Gatsby CLI tool lets us run gatsby commands on the command line. It is an npm package that we need to install.
 
    ```sh
    npm install -g gatsby-cli
    ```
 
-   which will install gatsby-cli globally in your system.
+   which will install gatsby-cli globally in our system.
 
    > Windows users need to run the following command to properly use gatsby-cli / any other globally installed npm package.
 
@@ -104,7 +104,7 @@ Themes are Plugins that come with pre-configured functionality, data sourcing, o
 When we create a new gatsby site from the template, we can see an src folder that contains a pages folder; this folder is responsible for the routing in the gatsby site.
 Every component we create inside this folder creates URL route /(component name)
 
-If you have a component, _about.js_ inside the pages folder.
+If we have a component, _about.js_ inside the pages folder.
 
 ```js
 import React from "react"
@@ -164,16 +164,16 @@ module.exports = {
 
 ## 5. Graphql and page queries
 
-[GraphQL](https://graphql.org/) is a query language developed by Facebook. It interacts with APIs. Queries allow you to get all the information you need inside of a single request.
-Gatsby uses Graphql to interact with local files. This allows you to reuse pieces of data.
+[GraphQL](https://graphql.org/) is a query language developed by Facebook. It interacts with APIs. Queries allow us to get all the information we need inside of a single request.
+Gatsby uses Graphql to interact with local files. This allows us to reuse pieces of data.
 
-There are two types of queries you can use in Gatsby, static and page queries.
+There are two types of queries we can use in Gatsby, static and page queries.
 
 **Static queries**
 
 We can implement static queries using a react hook called useStaticQuery.Which will query data with Graphql at build time.
 
-[React hooks](https://reactjs.org/docs/hooks-intro.html) let you use state and other React features without writing a class.
+[React hooks](https://reactjs.org/docs/hooks-intro.html) let us use state and other React features without writing a class.
 Want to know more about hooks [React Hooks](https://reactjs.org/docs/hooks-overview.html)
 
 ```js
@@ -208,14 +208,14 @@ const ComponentName=({data})=>{
 
 ## 6. Overview of Gatsby files
 
-- _gatsby-node.js_ is executed once in the process of building your site.
-  You can use it to dynamically create pages, add Graphql Nodes, etc.
+- _gatsby-node.js_ is executed once in the process of building our site.
+  We can use it to dynamically create pages, add Graphql Nodes, etc.
 
 - _gatsby-config.js_ contains all the plugins and configs for the site, including the site metadata.
 
 - _gatsby-browser.js_ used to respond to browser events and wrap the site with additional components.
 
-- _gatsby-ssr.js_ Related with Server-Side-Rendering. This file will let you alter the content of static HTML files while they are being rendered by the server.
+- _gatsby-ssr.js_ Related with Server-Side-Rendering. This file will let us alter the content of static HTML files while they are being rendered by the server.
 
 
 Well, That's a wrap, folks! Hope you enjoyed reading!

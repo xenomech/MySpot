@@ -54,3 +54,9 @@
   background: #00ff73;
   color: black;
 }
+
+.gatsby-highlight pre[class~="language-powershell"]::before {
+  content: "powershell";
+  background: #0044ff;
+  color: white;
+}

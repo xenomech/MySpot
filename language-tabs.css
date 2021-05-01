@@ -60,3 +60,8 @@
   background: #0044ff;
   color: white;
 }
+
+@media only screen and (max-width: 500px) {
+  .gatsby-highlight pre[class*="language-"]::before {
+    display: none;}
+}

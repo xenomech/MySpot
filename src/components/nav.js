@@ -6,16 +6,24 @@ export const Nav = () => {
   return (
     <NavWrapper>
       <NavLinks>
-        <Link to="/">
-          xenomech
-        </Link>
+        <Link to="/">xenomech</Link>
       </NavLinks>
       <NavLinks>
         <Link to="/blog">
-          <strong>01 </strong>Blog
+          <strong>
+            <span role="img" aria-label="Memo">
+              📝{" "}
+            </span>
+          </strong>
+          Blog
         </Link>
         <Link to="/projects">
-          <strong>02 </strong>Projects
+          <strong>
+            <span role="img" aria-label="Rocket">
+              🚀{" "}
+            </span>
+          </strong>
+          Projects
         </Link>
       </NavLinks>
     </NavWrapper>

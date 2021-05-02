@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
       <Content>
         <div>
           <H1>Gokul Suresh</H1>
-          <H3>software developer</H3>
+          <H3>Software Developer</H3>
           <SocialsWrapper>
             <SocialsButton bg="github">
               <a href="https://github.com/xenomech/" alt="github">

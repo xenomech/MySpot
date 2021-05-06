@@ -60,6 +60,11 @@
   background: #0044ff;
   color: white;
 }
+.gatsby-highlight pre[class~="language-dart"]::before {
+  content: "Dart";
+  background: #193992;
+  color: white;
+}
 
 @media only screen and (max-width: 500px) {
   .gatsby-highlight pre[class*="language-"]::before {

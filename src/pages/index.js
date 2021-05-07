@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
               </a>
             </SocialsButton>
             <SocialsButton bg="linkedin">
-              <a href="www.linkedin.com/in/gokulsmenon227" alt="linkedin">
+              <a href="https://www.linkedin.com/in/gokulsmenon227" alt="linkedin">
                 <FaLinkedin />
               </a>
             </SocialsButton>

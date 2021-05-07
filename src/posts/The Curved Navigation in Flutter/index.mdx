@@ -13,7 +13,7 @@ It helps in creating cross-platform mobile applications using a single codebase.
 
 ## What is a Navbar?
 
-A navigation bar is a section of a GUI intended to provide users with the ability to switch between different slices of the app with a single tap. The
+A navigation bar is a section of a GUI intended to provide users with the ability to switch between different slices of the app with a single tap.
 
 The curved_navigation_bar is a package used to implement a simple but elegant-looking navbar in a flutter app. The curved_navigation_bar package can replace the bottom navbar provided by the material package from android.
 [Read More](https://pub.dev/packages/curved_navigation_bar)
@@ -24,7 +24,7 @@ So, let's start by creating a new flutter project.
 flutter create [project-name]
 ```
 
-Go ahead and clear all the boilerplate code in the _lib/main.dart_ and make a _lib/pages/index.dart_.
+Go ahead and clear all the boilerplate code in the _lib/main.dart_ and make a _lib/pages/index.dart_ while you are at it.
 
 **lib/main.dart**
 
@@ -97,7 +97,7 @@ Imagine we have five pages.
 
 Let's create these pages.
 
-Before we start making the pages, we should be able to preview these pages as we make them. So, to do that we must edit /lib/pages/index.dart.
+Before we start making the pages, we should be preview these pages as we make them. So, to do that, we must edit /lib/pages/index.dart.
 
 
 **lib/pages/index.dart**
@@ -318,8 +318,7 @@ Now declare a variable to access the current nav item.
   int _activePage = 0;
 ```
 
-Next, declare a list with all the widgets in the order in which you want to show them because we will be using the index to select the widget.
-
+Next, declare a list with all the widgets in the order you want to show them because we will be using the index to select it.
 ```dart
 final List<Widget> tabs = [
     Home(),
@@ -330,7 +329,7 @@ final List<Widget> tabs = [
   ];
 ```
 
-Now use the curved_navigation_bar as the bottomNavigationBar property.
+Now use the curved_navigation_bar as the scaffold's bottomNavigationBar property.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -365,11 +364,9 @@ class _IndexPageState extends State<IndexPage> {
 }
 ```
 
-Now we need to provide the attributes which the Curved navbar uses.
+Now, add the attributes used by the Curved navbar, Such as items, index, color, backgroundColor, onTap, etc.
 
-Such as items,index,color,backgroundColor,onTap,etc
-
-Now, Let's add the list of items we had.
+Let's add the list of items we had.
 
 ```dart
     bottomNavigationBar: CurvedNavigationBar(
@@ -407,7 +404,7 @@ Ok, with that out of the way, we can now take care of the background color, anim
 
 To navigate to a specific page, we update the \_activePage variable with the selected value from the navbar.
 To be accurate, if the second page is selected, the value of \_activePage will be 2, and the tabs[_activePage] will give you the widget corresponding to the second page.
-The widget corresponding to tabs[_activePage] can be provided as the body property for the scaffold.
+The widget corresponding to tabs[_activePage] will be the body property for the scaffold.
 
 So, we need to update the value of \_activePage.
 We use the onTap attribute provided by the package.
@@ -420,9 +417,9 @@ We use the onTap attribute provided by the package.
     },
 ```
 
-This will set the \_activePage to the index of the item tapped.
+The above code will set the \_activePage to the index of the item tapped.
 
-Finally,bringing everything together, we have
+Finally, putting together all the pieces we have:
 
 ```dart
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -487,4 +484,4 @@ Which will look something like this:
   width="200"
 />
 
-Well, That's a wrap, folks! Hope you enjoyed reading!
+Well, That's a wrap, folks! I hope you enjoyed reading!

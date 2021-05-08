@@ -63,5 +63,15 @@ module.exports = {
         display: "swap",
       },
     },
+    {
+      resolve: `gatsby-plugin-scroll-indicator`,
+      fallback: { "path": false },
+      options: {
+        color: "linear-gradient(to right, #00c6ff, #0072ff)",
+        height: "2px",
+        paths: ["/", "/blog/**"],
+        zIndex: `9999`,
+      },
+    },
   ],
 }

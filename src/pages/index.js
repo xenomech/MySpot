@@ -26,7 +26,10 @@ const IndexPage = ({ data }) => {
               </a>
             </SocialsButton>
             <SocialsButton bg="linkedin">
-              <a href="https://www.linkedin.com/in/gokulsmenon227" alt="linkedin">
+              <a
+                href="https://www.linkedin.com/in/gokulsmenon227"
+                alt="linkedin"
+              >
                 <FaLinkedin />
               </a>
             </SocialsButton>
@@ -63,16 +66,21 @@ const IndexPage = ({ data }) => {
         </div>
         <div style={{ padding: "2rem 0rem" }}>
           <h3 style={{ fontWeight: "400" }}>Latest Posts</h3>
-          {posts.map(post => (
-            <Card
-              key={`/blog/${post.node.frontmatter.slug}`}
-              date={post.node.frontmatter.date}
-              title={post.node.frontmatter.title}
-              excerpt={post.node.frontmatter.excerpt}
-              slug={`/blog/${post.node.frontmatter.slug}`}
-              langtabs={post.node.frontmatter.langtabs}
-            />
-          ))}
+          {posts.map(post => {
+            if (post.node.frontmatter.draft===false) {
+              return <Card
+                key={`/blog/${post.node.frontmatter.slug}`}
+                date={post.node.frontmatter.date}
+                title={post.node.frontmatter.title}
+                excerpt={post.node.frontmatter.excerpt}
+                slug={`/blog/${post.node.frontmatter.slug}`}
+                langtabs={post.node.frontmatter.langtabs}
+              />
+            }
+            else{
+              return null
+            }
+          })}
         </div>
       </Content>
     </Container>
@@ -91,6 +99,7 @@ export const PageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             excerpt
             langtabs
+            draft
           }
           id
         }

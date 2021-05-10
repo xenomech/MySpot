@@ -17,6 +17,7 @@ export const PageQuery = graphql`
             title
             excerpt
             langtabs
+            draft
           }
         }
       }
@@ -37,18 +38,23 @@ const allPost = ({ pageContext, data }) => {
   return (
     <Container>
       <Seo />
-      {/* <div style={{ minWidth: "70%" }}> */}
       <Content>
-        {posts.map(post => (
-          <Card
-            key={`/blog/${post.node.frontmatter.slug}`}
-            date={post.node.frontmatter.date}
-            title={post.node.frontmatter.title}
-            excerpt={post.node.frontmatter.excerpt}
-            langtabs={post.node.frontmatter.langtabs}
-            slug={`/blog/${post.node.frontmatter.slug}`}
-          />
-        ))}
+        {posts.map(post => {
+          if (post.node.frontmatter.draft === false) {
+            return (
+              <Card
+                key={`/blog/${post.node.frontmatter.slug}`}
+                date={post.node.frontmatter.date}
+                title={post.node.frontmatter.title}
+                excerpt={post.node.frontmatter.excerpt}
+                slug={`/blog/${post.node.frontmatter.slug}`}
+                langtabs={post.node.frontmatter.langtabs}
+              />
+            )
+          } else {
+            return null
+          }
+        })}
       </Content>
       <Pagination
         isFirst={isFirst}
@@ -56,7 +62,6 @@ const allPost = ({ pageContext, data }) => {
         prevPage={prevPage}
         nextPage={nextPage}
       />
-      {/* </div> */}
     </Container>
   )
 }

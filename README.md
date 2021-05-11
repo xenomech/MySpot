@@ -30,6 +30,10 @@ I made this blog to talk about things I love and to keep notes of things I have 
 
 [`Netlify`](https://www.netlify.com/)
 
+## ✨ Features
+- [x] Scroll indicator
+- [x] Post drafting
+
 <p align="center">
 <a href="https://www.netlify.com/">Netlify</a> |
 <a href="https://www.gatsbyjs.com/">Gatsby</a> |

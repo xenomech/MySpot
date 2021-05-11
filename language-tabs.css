@@ -68,5 +68,10 @@
 
 @media only screen and (max-width: 500px) {
   .gatsby-highlight pre[class*="language-"]::before {
-    display: none;}
+    /* display: none; */
+    content: "";
+    border-radius: 25px;
+    right: 0.25rem;
+    top: 0.25rem;
+  }
 }

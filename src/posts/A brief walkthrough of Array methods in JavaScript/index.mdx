@@ -1,0 +1,437 @@
+---
+title: A guide to Array methods in JavaScript
+slug: JSArrayMethods
+date: 2021-06-30
+excerpt: Different Array methods in JS
+langtabs: [JS]
+draft: true
+---
+
+# Array methods in JavaScript
+
+Hi there, this post will help you know everything you want to know about the array methods in JavaScript. But before we get started, we need to take care of some things.
+
+## What is an array?
+
+An array is a collection of data that can be accessed using a common variable. Each data in the Array are called an element, and each element can be accessed using its index.
+
+### Creating an array:
+
+```js
+const array_name=[item1,item2,item3,...]
+```
+
+eg:
+
+```js
+const values = [45, 30, 90]
+```
+
+### Finding the length of an Array
+
+Arrays have a property called length which will return the number of elements in the array.
+
+```js
+const values = [45, 65, 16]
+console.log(values.length) // the output is 3
+```
+
+### Access the Elements of an Array
+
+- We can access any element by referring to the index value.
+
+- Array indexes start with 0.
+
+```js
+const values = [45, 65, 16]
+let x = values[0] // x=45
+```
+
+---
+
+Now that the basics are out of the way, we can look into the various array methods.
+
+| Methods    | Desc                                                                             |
+| ---------- | -------------------------------------------------------------------------------- |
+| push()     | Adds new elements to the end of an array, and returns the new length             |
+| pop()      | Removes the last element of an array, and returns that element                   |
+| shift()    | Removes the first element of an array, and returns that element                  |
+| unshift()  | Adds new elements to the beginning of an array, and returns the new length       |
+| map()      | Creates a new array with the result of calling a function for each array element |
+| filter()   | Creates a new array with every element in an array that passes a test            |
+| forEach()  | Calls a function for each array element                                          |
+| includes() | Check if an array contains the specified element                                 |
+| indexOf()  | Search the array for an element and returns its position                         |
+| join()     | Joins all elements of an array into a string                                     |
+| reverse()  | Reverses the order of the elements in an array                                   |
+| slice()    | Selects a part of an array, and returns the new array                            |
+| splice()   | Adds/Removes elements from an array                                              |
+| some()     | Checks if any of the elements in an array pass a test                            |
+| sort()     | Sorts the elements of an array                                                   |
+| toString() | Converts an array to a string, and returns the result                            |
+| concat()   | Joins two or more arrays, and returns a copy of the joined arrays                |
+
+> To know more about other Array methods visit : [w3schools](https://www.w3schools.com/jsref/jsref_obj_array.asp)
+
+## push()
+
+The push() method helps in adding a new element to the end of the array.
+
+```js
+var marks = [20, 30, 40]
+console.log("The orginal Array is :")
+console.log(marks)
+marks.push(90)
+console.log("Array after pushing the value is :")
+console.log(marks)
+```
+
+Output
+
+```
+The orginal Array is :
+[ 20, 30, 40 ]
+Array after pushing the value is :
+[ 20, 30, 40, 90 ]
+
+```
+
+---
+
+## pop()
+
+The pop() method helps in removing the last element from the array and returns the removed element.
+
+```js
+var marks = [20, 30, 40, 90]
+console.log("The orginal Array is :")
+console.log(marks)
+var deleted_value = marks.pop()
+console.log("Array after poping is :")
+console.log(marks)
+console.log("The deleted value is: " + deleted_value)
+```
+
+Output
+
+```
+The orginal Array is :
+[ 20, 30, 40, 90 ]
+Array after poping is :
+[ 20, 30, 40 ]
+The deleted value is: 90
+
+```
+
+## shift()
+
+The shift() method removes the first element of an array, and returns that element.
+
+```js
+var marks = [20, 30, 40, 90]
+console.log("The orginal Array is :")
+console.log(marks)
+var deleted_value = marks.shift()
+console.log("Array after shift() is :")
+console.log(marks)
+console.log("The deleted value is: " + deleted_value)
+```
+
+Output
+
+```
+The orginal Array is :
+[ 20, 30, 40, 90 ]
+Array after shift() is :
+[ 30, 40, 90 ]
+The deleted value is: 20
+```
+
+## unshift()
+
+The unshift() method adds new elements to the beginning of an array, and returns the new length.
+
+```js
+var marks = [20, 30, 40, 90]
+console.log("The orginal Array is :")
+console.log(marks)
+marks.unshift(100)
+console.log("Array after unshift() is :")
+console.log(marks)
+```
+
+Output
+
+```
+The orginal Array is :
+[ 20, 30, 40, 90 ]
+Array after unshift() is :
+[ 100, 20, 30, 40, 90 ]
+```
+
+> unshift() and shift() are similar to push() and pop() respectively the only difference is the position of insertion or deletion.
+
+## map()
+
+The map function Creates a new array with the result of calling a function for each array element.
+
+```js
+var marks = [100, 20, 30, 40, 90]
+console.log("The orginal Array is :")
+console.log(marks)
+
+var newarray = marks.map((items) => {
+  return items * 3
+})
+
+console.log("The new array is :")
+console.log(newarray)
+```
+
+Output
+
+```
+The orginal Array is :
+[ 100, 20, 30, 40, 90 ]
+The new array is :
+[ 300, 60, 90, 120, 270 ]
+```
+
+## filter()
+
+Creates a new array with every element in an array that passes a test.
+
+```js
+var marks = [100, 20, 30, 40, 90]
+console.log("The orginal Array is :")
+console.log(marks)
+
+var newarray = marks.filter((items) => {
+  return items >= 40
+})
+
+console.log("The new array is :")
+console.log(newarray)
+```
+
+Output
+
+```
+The orginal Array is :
+[ 100, 20, 30, 40, 90 ]
+The new array is :
+[ 100, 40, 90 ]
+```
+
+## forEach()
+
+The forEach() method calls a function for each array element.
+
+```js
+var marks = [100, 20, 30, 40, 90];
+console.log("The orginal Array is :");
+console.log(marks);
+
+marks.forEach((item) => {
+  console.log("for each element print the element : " + item);
+});
+```
+
+Output
+
+```
+The orginal Array is :
+[ 100, 20, 30, 40, 90 ]
+for each element print the element : 100
+for each element print the element : 20
+for each element print the element : 30
+for each element print the element : 40
+for each element print the element : 90
+```
+
+## includes()
+
+The includes() method checks if an array contains the specified element.
+
+```js
+var marks = [100, 20, 30, 40, 90];
+console.log("The orginal Array is :");
+console.log(marks);
+
+console.log(marks.includes(40))
+```
+Output
+
+```
+The orginal Array is :
+[ 100, 20, 30, 40, 90 ]
+true
+```
+
+## indexOf()
+
+The indexOf() method searches the array for an element and returns its position.
+
+```js
+var marks = [100, 20, 30, 40, 90];
+console.log("The orginal Array is :");
+console.log(marks);
+
+var pos=marks.indexOf(40)
+console.log(pos)
+```
+
+Output
+
+```
+The orginal Array is :
+[ 100, 20, 30, 40, 90 ]
+3
+```
+
+## join()
+
+The join() method joins all elements of an array into a string.
+
+```js
+var marks = [100, 20, 30, 40, 90];
+console.log("The orginal Array is :");
+console.log(marks);
+
+var joined_string=marks.join()
+console.log(joined_string)
+
+var joined_string=marks.join(" -> ")
+console.log(joined_string)
+
+```
+
+Output
+
+```
+The orginal Array is :
+[ 100, 20, 30, 40, 90 ]
+100,20,30,40,90
+100 -> 20 -> 30 -> 40 -> 90
+```
+
+## reverse()
+
+The reverse() method reverses the order of the elements in an array.
+```js
+var marks = [100, 20, 30, 40, 90];
+console.log("The orginal Array is :");
+console.log(marks);
+
+console.log("Reversed Array is :")
+var reverse_marks = marks.reverse();
+console.log(reverse_marks);
+
+```
+
+Output
+
+```
+The orginal Array is :
+[ 100, 20, 30, 40, 90 ]
+Reversed Array is :
+[ 90, 40, 30, 20, 100 ]
+```
+## slice()
+
+The slice() method selects a part of an array, and returns the new array.
+
+```js
+var marks = [100, 20, 30, 40, 90];
+console.log("The orginal Array is :");
+console.log(marks);
+
+console.log("Sliced Array is :");
+var sliced_array = marks.slice(1, 4);
+console.log(sliced_array);
+```
+Output
+
+```
+The orginal Array is :
+[ 100, 20, 30, 40, 90 ]
+Sliced Array is :
+[ 20, 30, 40 ]
+```
+
+## splice()
+
+The splice() method Adds/Removes elements to/from an array and returns the removed elements. 
+This method changes the orginal array.
+
+```js
+array.splice(index, howmany, item1, ....., item n)
+// index : (requierd) Specify position to add/remove
+// howmany: (optional) The number of items to be removed. If set to 0,no items will be removed
+// item1 to n :(optional) The new items to be added.
+```
+eg:
+
+```js
+var marks = [100, 20, 30, 40, 90];
+console.log("The orginal Array is :");
+console.log(marks);
+
+console.log("spliced Array after adding 2 values is :");
+marks.splice(3, 0, 45, 25);
+console.log(marks);
+
+console.log("spliced Array after removal of the first 2 values is :");
+marks.splice(0, 2);
+console.log(marks);
+```
+Output
+```
+The orginal Array is :
+[ 100, 20, 30, 40, 90 ]
+spliced Array after adding 2 values is :
+[
+  100, 20, 30, 45,
+   25, 40, 90
+]
+spliced Array after removal of the first 2 values is :
+[ 30, 45, 25, 40, 90 ]
+
+```
+
+## some()
+
+## sort()
+
+## toString()
+
+## concat()
+
+The concat() method joins two or more arrays, and returns a copy of the joined arrays.
+
+```js
+var marks = [100, 20, 30, 40, 90];
+console.log("The orginal Array is :");
+console.log(marks);
+
+var newarray = marks.concat(100);
+console.log("concatinated array is :");
+console.log(newarray);
+
+var additional_marks = [100, 200, 300, 400];
+newarray.splice(0, newarray.length); //clean the array from the old data
+newarray = marks.concat(additional_marks);
+console.log("concatinated array is :");
+console.log(newarray)
+```
+
+Output
+
+```
+The orginal Array is :
+[ 100, 20, 30, 40, 90 ]
+concatinated array is :
+[ 100, 20, 30, 40, 90, 100 ]
+concatinated array is :
+[ 100,  20,  30,  40, 90, 100, 200, 300, 400 ]
+```

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Seo, Container, Content, Post } from "../components"
-import { H1 } from "../styles"
+import { H1, P, LangTabscontainer, LangTabs } from "../styles"
 
 const singlePost = ({ data }) => {
   return (
@@ -14,6 +14,12 @@ const singlePost = ({ data }) => {
       <Content>
         <Post>
           <H1>{data.mdx.frontmatter.title}</H1>
+          <P color="sysGreenDark">{data.mdx.frontmatter.date}</P>
+          <LangTabscontainer>
+            {data.mdx.frontmatter.langtabs.map(lang => {
+              return <LangTabs lang={lang}>{lang}</LangTabs>
+            })}
+          </LangTabscontainer>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
         </Post>
       </Content>
@@ -27,10 +33,11 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }) {
       body
       frontmatter {
-        date
+        date(formatString: "MMMM DD, YYYY")
         excerpt
         slug
         title
+        langtabs
       }
     }
   }

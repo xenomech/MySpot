@@ -34,7 +34,7 @@ const allPost = ({ pageContext, data }) => {
   const nextPage = `/blog/${currentpage + 1}`
 
   const posts = data.allMdx.edges
-  console.log(posts)
+  // console.log(posts)
   return (
     <Container>
       <Seo />

@@ -8,8 +8,12 @@ export const Card = ({ date, slug, excerpt, title, langtabs }) => {
         <p>{date}</p>
         <p>{excerpt}</p>
         <LangTabscontainer>
-          {langtabs.map(lang => {
-            return <LangTabs lang={lang}>{lang}</LangTabs>
+          {langtabs.map((lang, i) => {
+            return (
+              <LangTabs key={i} lang={lang}>
+                {lang}
+              </LangTabs>
+            )
           })}
         </LangTabscontainer>
       </CardWrapper>{" "}

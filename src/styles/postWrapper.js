@@ -77,9 +77,11 @@ export const PostWrapper = styled.main`
   }
 
   code {
-    ${"" /* font-family: "Roboto", sans-serif; */}
     margin: 2rem;
     padding: 2rem 0.3rem;
+  }
+  pre {
+    font-family: "JetBrains Mono", monospace;
   }
   del {
     text-decoration: line-through;

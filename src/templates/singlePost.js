@@ -16,8 +16,12 @@ const singlePost = ({ data }) => {
           <H1>{data.mdx.frontmatter.title}</H1>
           <P color="sysGreenDark">{data.mdx.frontmatter.date}</P>
           <LangTabscontainer>
-            {data.mdx.frontmatter.langtabs.map(lang => {
-              return <LangTabs lang={lang}>{lang}</LangTabs>
+            {data.mdx.frontmatter.langtabs.map((lang,i) => {
+              return (
+                <LangTabs key={i} lang={lang}>
+                  {lang}
+                </LangTabs>
+              )
             })}
           </LangTabscontainer>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>

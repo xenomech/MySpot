@@ -1,3 +1,3 @@
-export default function Container(props) {
-  return <div></div>;
+export default function Container({ children }) {
+  return <div className="">{children}</div>;
 }

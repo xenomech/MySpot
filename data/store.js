@@ -15,3 +15,5 @@ export const navItems = [
     icon: "🚀 ",
   },
 ];
+
+export const socialIcons = [];

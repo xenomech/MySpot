@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import Layout from "../components/Layout";
 import Navbar from "../components/Nav";
 import { ThemeProvider } from "next-themes";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }) {
       <Layout>
         <Navbar />
         <Component {...pageProps} />
+        <Footer />
       </Layout>
     </ThemeProvider>
   );

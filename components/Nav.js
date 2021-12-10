@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 export default function Navbar() {
   const currentRoute = useRouter();
   const currentRouteClasses =
-    "pr-1 p-2 mr-2 flex justify-center items-center rounded-md hover:bg-gray-300 dark:hover:bg-black transition-all ease-in-out duration-100 ";
+    "pr-1 p-2 lg:p-3 mr-2 flex justify-center items-center rounded-md hover:bg-gray-300 dark:hover:bg-black transition-all ease-in-out duration-100 ";
   return (
     <div>
       <nav className="text-xl font-sans py-2 my-2 lg:flex justify-between items-center">

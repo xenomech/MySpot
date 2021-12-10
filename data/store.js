@@ -17,3 +17,10 @@ export const navItems = [
 ];
 
 export const socialIcons = [];
+
+export const categories = [
+  {
+    id: "Code",
+    label: "lets get things done!",
+  },
+];

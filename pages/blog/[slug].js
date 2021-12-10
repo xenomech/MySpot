@@ -7,8 +7,8 @@ const Blog = ({ mdxSource, frontmatter }) => {
     // <Layout>
     <div>
       <div>
-        <h1 className="font-bold p-2 m-2 text-3xl">{frontmatter.title}</h1>
-        <h2 className="font-semibold p-2 m-2 text-xl">
+        <h1 className="font-bold py-2 my-2 text-3xl">{frontmatter.title}</h1>
+        <h2 className="font-semibold py-2 my-2 text-xl">
           {frontmatter.date}
           {" • "}
           Gokul
@@ -16,7 +16,7 @@ const Blog = ({ mdxSource, frontmatter }) => {
           {frontmatter.readingTime.text}
         </h2>
       </div>
-      <article className=" prose dark:prose-dark p-3 m-3">
+      <article className="min-w-full prose prose-xl dark:prose-dark">
         <MDXRemote {...mdxSource} />
       </article>
     </div>

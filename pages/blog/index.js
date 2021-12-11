@@ -11,6 +11,7 @@ export default function Blog({ posts }) {
           var key = 0;
           return (
             <details
+              key={key}
               open
               className="open:bg-white py-4 m-2 lg:m-4 p-5 dark:open:bg-zinc-900 open:ring-1 open:ring-black/5 open:shadow-lg lg:p-10 rounded-xl transition-all ease-in-out duration-200"
             >
@@ -39,9 +40,9 @@ export default function Blog({ posts }) {
 
 export async function getStaticProps() {
   const posts = await getAllFiles("posts");
-  console.log(posts);
+  // console.log(posts);
   const data = await getTitleFromFrontmatter(posts, "posts");
-  console.log(data);
+  // console.log(data);
   return {
     props: {
       posts: data,

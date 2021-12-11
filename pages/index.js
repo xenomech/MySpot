@@ -16,7 +16,10 @@ export default function Home({ posts, snippets }) {
               Gokul Suresh
             </h1>
             <h2 className="py-1 sm:px-1 text-gray-700 dark:text-gray-200 mb-4 text-2xl">
-              Product Developer @ SurveySparrow
+              Product Developer @{" "}
+              <a className="text-green-600" href="https://surveysparrow.com/">
+                SurveySparrow
+              </a>
             </h2>
             {/* add social icons */}
             <div className="md:p-1 text-xl text-gray-700 dark:text-gray-200">
@@ -74,12 +77,14 @@ export default function Home({ posts, snippets }) {
                   <div className="flex transition-all ease-in-out duration-400  hover:translate-x-3 justify-start items-center w-full py-5">
                     <div className="px-5">
                       <Link href={item.url}>
-                        <a className="break-words text-xl">{item.title}</a>
-                      </Link>
-                      <br />
-                      <Link href={item.publishedIn.publisherBaseUrl}>
-                        <a className="break-words font-medium text-gray-400">
-                          {item.publishedIn.publisherLabel}
+                        <a>
+                          <a className="break-words text-xl">{item.title}</a>
+                          <br />
+                          <Link href={item.publishedIn.publisherBaseUrl}>
+                            <a className="break-words font-medium text-gray-400">
+                              {item.publishedIn.publisherLabel}
+                            </a>
+                          </Link>
                         </a>
                       </Link>
                     </div>

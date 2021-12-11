@@ -23,7 +23,10 @@ export default function About() {
               Gokul Suresh
             </h1>
             <h2 className="py-1 sm:px-1 text-gray-700 dark:text-gray-200 mb-4 text-xl">
-              Product Developer @ SurveySparrow
+              Product Developer @{" "}
+              <a className="text-green-600" href="https://surveysparrow.com/">
+                SurveySparrow
+              </a>
             </h2>
             <div className="flex items-center xl:justify-start justify-center">
               <a href="https://github.com/xenomech/">

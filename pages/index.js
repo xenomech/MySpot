@@ -3,26 +3,34 @@ import Card from "../components/Card";
 import Link from "next/link";
 import { getAllFiles, getTitleFromFrontmatter } from "../lib/lib";
 import styles from "../styles/extra.module.css";
+import { publications } from "../data/store";
+import Image from "next/image";
 
 export default function Home({ posts, snippets }) {
   return (
     <Container>
       <div className="my-5 lg:py-10">
-        <h1 className="py-1 font-bold text-3xl lg:text-5xl tracking-tight mb-1 text-black dark:text-white">
-          Gokul Suresh
-        </h1>
-        <h2 className="py-1 lg:px-1 text-gray-700 dark:text-gray-200 mb-4 text-2xl">
-          Product Developer @ SurveySparrow
-        </h2>
-        {/* add social icons */}
-        <div className="p-1 text-xl text-gray-700 dark:text-gray-200">
-          <p className="text-2xl">
-            Hey ! <span className={styles.wavingHand}>👋</span>
-          </p>
-          <p>
-            Welcome to my spot on the web. I build and occasionally design
-            websites and apps.
-          </p>
+        <div className="w-full">
+          {/* if needed add a rounded profile icon */}
+          <div>
+            <h1 className="py-1 font-bold text-3xl lg:text-5xl tracking-tight mb-1 text-black dark:text-white">
+              Gokul Suresh
+            </h1>
+            <h2 className="py-1 lg:px-1 text-gray-700 dark:text-gray-200 mb-4 text-2xl">
+              Product Developer @ SurveySparrow
+            </h2>
+            {/* add social icons */}
+            <div className="p-1 text-xl text-gray-700 dark:text-gray-200">
+              <p className="text-2xl">
+                Hey ! <span className={styles.wavingHand}>👋</span>
+              </p>
+              <p>
+                Welcome to my spot on the web. I am just an aspiring developer.
+                I build and occasionally design websites and apps. I started
+                this blog to keep track of the things I do!
+              </p>
+            </div>
+          </div>
         </div>
         <div className="my-5 lg:my-10">
           <h1 className="py-5 font-semibold text-2xl tracking-tight mb-1 text-black dark:text-white">
@@ -56,7 +64,32 @@ export default function Home({ posts, snippets }) {
             })}
           </div>
         </div>
-        <div></div>
+        <div className="my-10">
+          <h1 className="py-5 font-semibold text-2xl tracking-tight mb-1 text-black dark:text-white">
+            Publications
+          </h1>
+          <div className="">
+            {publications.map((item, index) => {
+              return (
+                <div key={index + 1}>
+                  <div className="flex transition-all ease-in-out duration-400  hover:translate-x-3 justify-start items-center w-full py-5">
+                    <div className="px-5">
+                      <Link href={item.url}>
+                        <a className="break-words text-xl">{item.title}</a>
+                      </Link>
+                      <br />
+                      <Link href={item.publishedIn.publisherBaseUrl}>
+                        <a className="break-words font-medium text-gray-400">
+                          {item.publishedIn.publisherLabel}
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </Container>
   );

@@ -54,3 +54,14 @@ export const footerItems = [
     href: "/snippets",
   },
 ];
+
+export const publications = [
+  {
+    title: `The Magic of Optimistic UI Updates with React and Redux`,
+    url: `https://engineering.surveysparrow.com/the-magic-of-optimistic-ui-updates-311351df28b`,
+    publishedIn: {
+      publisherLabel: `SurveySparrow Engineering`,
+      publisherBaseUrl: `https://engineering.surveysparrow.com/`,
+    },
+  },
+];

@@ -24,3 +24,25 @@ export const categories = [
     label: "lets get things done!",
   },
 ];
+export const footerItems = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/xenomech",
+  },
+  {
+    label: "Blog",
+    href: "/blog",
+  },
+  {
+    label: "Linkedin",
+    href: "https://github.com/xenomech",
+  },
+  {
+    label: "Snippets",
+    href: "/snippets",
+  },
+];

@@ -1,23 +1,23 @@
 import { MDXRemote } from "next-mdx-remote";
-// import Layout from "../../components/layout";
+import MDXComponents from "../../components/MDXComponents";
 import { getAllFiles, getFileBySlug } from "../../lib/lib";
 
 const Blog = ({ mdxSource, frontmatter }) => {
   return (
     // <Layout>
-    <div>
+    <div className="py-5 md:py-12">
       <div>
-        <h1 className="font-bold py-2 my-2 text-3xl">{frontmatter.title}</h1>
-        <h2 className="font-semibold py-2 my-2 text-xl">
+        <h1 className="font-bold py-2 my-2 text-3xl lg:text-4xl">
+          {frontmatter.title}
+        </h1>
+        <h2 className="font-medium  py-2 my-2 text-xl">
           {frontmatter.date}
-          {" • "}
-          Gokul
           {" • "}
           {frontmatter.readingTime.text}
         </h2>
       </div>
       <article className="min-w-full prose prose-xl dark:prose-dark">
-        <MDXRemote {...mdxSource} />
+        <MDXRemote {...mdxSource} components={MDXComponents} />
       </article>
     </div>
   );

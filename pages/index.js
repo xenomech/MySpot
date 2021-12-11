@@ -1,5 +1,9 @@
 import Container from "../components/Container";
-export default function Home() {
+import Card from "../components/Card";
+import Link from "next/link";
+import { getAllFiles, getTitleFromFrontmatter } from "../lib/lib";
+
+export default function Home({ posts }) {
   return (
     <Container>
       <div className="py-10 px-2">
@@ -20,9 +24,35 @@ export default function Home() {
           <h1 className="py-5 font-bold text-2xl md:text-3xl tracking-tight mb-1 text-black dark:text-white">
             Latest posts
           </h1>
-          <p>here goes the latest post cards</p>
+          <div>
+            {posts.map((item, index) => {
+              return (
+                <Link href={`/blog/${item.slug}`} key={index + 1}>
+                  <a>
+                    <Card frontMatter={item.frontmatter} index={index + 1} />
+                  </a>
+                </Link>
+              );
+            })}
+          </div>
         </div>
+        <div></div>
       </div>
     </Container>
   );
+}
+
+export async function getStaticProps() {
+  const posts = await getAllFiles("posts");
+  // console.log(posts);
+  const data = await getTitleFromFrontmatter(posts, "posts");
+  data.sort(
+    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  );
+  // console.log(data);
+  return {
+    props: {
+      posts: data,
+    },
+  };
 }

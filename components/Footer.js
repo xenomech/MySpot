@@ -1,34 +1,13 @@
 import Link from "next/link";
+import { footerItems } from "../data/store";
 
 export default function Footer() {
-  const footerItems = [
-    {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "GitHub",
-      href: "https://github.com/xenomech",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "Linkedin",
-      href: "https://github.com/xenomech",
-    },
-    {
-      label: "Snippets",
-      href: "/snippets",
-    },
-  ];
   return (
     <div>
       <div className="md:w-6/12 text-gray-600 dark:text-zinc-300 md:text-xl grid grid-cols-2 gap-0 p-2">
-        {footerItems.map((items) => {
+        {footerItems.map((items, index) => {
           return (
-            <Link href={items.href}>
+            <Link href={items.href} key={index + 1}>
               <a className="col-span-1 p-2">{items.label}</a>
             </Link>
           );

@@ -2,16 +2,14 @@ import { MDXRemote } from "next-mdx-remote";
 // import Layout from "../../components/layout";
 import { getAllFiles, getFileBySlug } from "../../lib/lib";
 
-const Blog = ({ mdxSource, frontmatter }) => {
+const Snippets = ({ mdxSource, frontmatter }) => {
   return (
     // <Layout>
     <div>
       <div>
         <h1 className="font-bold py-2 my-2 text-3xl">{frontmatter.title}</h1>
-        <h2 className="font-semibold py-2 my-2 text-xl">
+        <h2 className="font-medium italic py-2 my-2 text-xl">
           {frontmatter.date}
-          {" • "}
-          Gokul
           {" • "}
           {frontmatter.readingTime.text}
         </h2>
@@ -23,7 +21,7 @@ const Blog = ({ mdxSource, frontmatter }) => {
   );
 };
 
-export default Blog;
+export default Snippets;
 
 export async function getStaticPaths() {
   const snippets = await getAllFiles("snippets");

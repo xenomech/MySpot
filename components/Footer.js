@@ -19,7 +19,10 @@ export default function Footer() {
         </div>
         <div className="text-gray-600 dark:text-gray-500">
           <p className="m-2 font-mono tracking-tighter">
-            Build with Next.js 12
+            Build with{" "}
+            <a href="https://nextjs.org/" className="text-blue-500">
+              Next.js 12
+            </a>
           </p>
         </div>
       </div>

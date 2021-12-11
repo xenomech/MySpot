@@ -4,7 +4,6 @@ import Link from "next/link";
 import { getAllFiles, getTitleFromFrontmatter } from "../lib/lib";
 import styles from "../styles/extra.module.css";
 import { publications } from "../data/store";
-import Image from "next/image";
 
 export default function Home({ posts, snippets }) {
   return (

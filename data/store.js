@@ -10,9 +10,9 @@ export const navItems = [
     icon: "📃 ",
   },
   {
-    label: "Projects",
-    url: "/projects",
-    icon: "🚀 ",
+    label: "About",
+    url: "/about",
+    icon: "🙋🏻 ",
   },
 ];
 
@@ -43,11 +43,11 @@ export const footerItems = [
   },
   {
     label: "Contact",
-    href: "/contact",
+    href: "/about",
   },
   {
     label: "Linkedin",
-    href: "https://github.com/xenomech",
+    href: "https://www.linkedin.com/in/gokulsmenon227",
   },
   {
     label: "Snippets",
@@ -63,5 +63,13 @@ export const publications = [
       publisherLabel: `SurveySparrow Engineering`,
       publisherBaseUrl: `https://engineering.surveysparrow.com/`,
     },
+  },
+];
+
+export const experience = [
+  {
+    company: "SurveySparrow",
+    role: "Product Developer",
+    timeLine: "July 2021 - Present",
   },
 ];

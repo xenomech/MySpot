@@ -6,7 +6,12 @@ import { categories } from "../../data/store";
 export default function Blog({ posts }) {
   return (
     <div className="p-3 pt-5 pb-10 mx-auto">
-      <h1 className="text-3xl p-5">All Posts</h1>
+      <div className="flex items-center justify-start p-5">
+        <h1 className="text-2xl px-2">All Posts</h1>
+        <div className="relative w-7 h-7 dark:bg-blue-500 bg-blue-400 text-white dark:text-gray-800 rounded-full ">
+          <p className="text-lg absolute top-0 left-2">{posts.length}</p>
+        </div>
+      </div>
       <div className="w-full mx-auto">
         {categories.map((category) => {
           var key = 0;

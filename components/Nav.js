@@ -7,10 +7,10 @@ import { useRouter } from "next/router";
 export default function Navbar() {
   const currentRoute = useRouter();
   const currentRouteClasses =
-    "pr-1 p-2 sm:p-3 mr-2 flex justify-center items-center rounded-md hover:bg-gray-200 dark:hover:bg-black transition-all ease-in-out duration-100 ";
+    "pr-1 p-2 md:p-0 mr-2 flex justify-center items-center rounded-md hover:bg-gray-200 dark:hover:bg-black transition-all ease-in-out duration-100 ";
   return (
     <div>
-      <nav className="text-xl font-sans py-2 my-2 lg:flex justify-between items-center">
+      <nav className="text-xl font-sans py-2 my-2 xl:flex justify-between items-center">
         <div className="flex justify-between items-center">
           <Link href="/">
             <a
@@ -24,7 +24,7 @@ export default function Navbar() {
               xenomech
             </a>
           </Link>
-          <div className="lg:hidden flex">
+          <div className="xl:hidden flex">
             <DarkmodeSwitcher />
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function Navbar() {
                     : currentRouteClasses
                 }
               >
-                <span>{item.icon}</span>
+                <span className="md:mx-1">{item.icon}</span>
                 <span
                   className={
                     currentRoute.route === item.url
@@ -52,7 +52,7 @@ export default function Navbar() {
               </a>
             </Link>
           ))}
-          <div className="hidden lg:flex">
+          <div className="hidden xl:flex">
             <DarkmodeSwitcher />
           </div>
         </div>

@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function Home({ posts, snippets }) {
   return (
     <Container>
-      <div className="my-5 sm:py-10">
+      <div className="my-5 sm:py-10 p-2">
         <div className="w-full">
           {/* if needed add a rounded profile icon */}
           <div>

@@ -9,7 +9,7 @@ const Blog = ({ mdxSource, frontmatter }) => {
         <h1 className="font-bold py-2 my-2 text-3xl sm:text-4xl">
           {frontmatter.title}
         </h1>
-        <h2 className="font-medium  py-2 my-2 text-xl">
+        <h2 className="font-medium text-gray-600 dark:text-gray-300 py-2 my-2 text-xl">
           {frontmatter.date}
           {" • "}
           {frontmatter.readingTime.text}

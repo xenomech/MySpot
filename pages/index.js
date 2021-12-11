@@ -29,7 +29,7 @@ export default function Home({ posts, snippets }) {
             Latest posts
           </h1>
           <div>
-            {posts.map((item, index) => {
+            {posts.slice(0, 4).map((item, index) => {
               return (
                 <Link href={`/blog/${item.slug}`} key={index + 1}>
                   <a>
@@ -45,7 +45,7 @@ export default function Home({ posts, snippets }) {
             Snippets
           </h1>
           <div>
-            {snippets.map((item, index) => {
+            {snippets.slice(0, 4).map((item, index) => {
               return (
                 <Link href={`/blog/${item.slug}`} key={index + 1}>
                   <a>

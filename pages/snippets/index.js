@@ -4,7 +4,8 @@ import Link from "next/link";
 
 export default function Snippets({ snippets }) {
   return (
-    <div className="h-4/6 py-10 mx-auto">
+    <div className="py-3 lg:py-10 mx-auto">
+      <h1 className="text-3xl p-5">Snippets</h1>
       <div className="w-full mx-auto">
         {snippets.map((item, index) => {
           return (

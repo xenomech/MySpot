@@ -5,7 +5,7 @@ import { categories } from "../../data/store";
 
 export default function Blog({ posts }) {
   return (
-    <div className="h-4/6 py-10 mx-auto">
+    <div className="p-3 lg:py-10 mx-auto">
       <h1 className="text-3xl p-5">All Posts</h1>
       <div className="w-full mx-auto">
         {categories.map((category) => {

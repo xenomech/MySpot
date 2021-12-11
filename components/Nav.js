@@ -43,8 +43,8 @@ export default function Navbar() {
                 <span
                   className={
                     currentRoute.route === item.url
-                      ? "mr-2 font-medium"
-                      : "mr-2"
+                      ? "ml-2 font-medium"
+                      : "ml-2"
                   }
                 >
                   {item.label}

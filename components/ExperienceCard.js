@@ -3,7 +3,7 @@ export default function ExperienceCard({ data }) {
     <div className="flex justify-start items-center w-full p-5">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="mx-3 h-6 w-6"
+        className="mx-3 h-6 w-6"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"

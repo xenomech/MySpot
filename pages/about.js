@@ -28,7 +28,7 @@ export default function About() {
                 SurveySparrow
               </a>
             </h2>
-            <div className="flex items-center xl:justify-start justify-center">
+            <div className="p-2 flex items-center xl:justify-start justify-center">
               <a href="https://github.com/xenomech/">
                 <FaGithub
                   size={35}
@@ -50,7 +50,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="px-5 text-xl text-gray-700 dark:text-gray-200">
+        <div className="p-5 text-xl text-gray-700 dark:text-gray-200">
           <p className="text-2xl">
             Hey ! <span className={styles.wavingHand}>👋</span>
           </p>

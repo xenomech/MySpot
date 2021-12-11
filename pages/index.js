@@ -54,7 +54,7 @@ export default function Home({ posts, snippets }) {
           <div>
             {snippets.slice(0, 4).map((item, index) => {
               return (
-                <Link href={`/blog/${item.slug}`} key={index + 1}>
+                <Link href={`/snippets/${item.slug}`} key={index + 1}>
                   <a>
                     <Card frontMatter={item.frontmatter} index={index + 1} />
                   </a>

@@ -30,12 +30,20 @@ export const footerItems = [
     href: "/",
   },
   {
+    label: "About",
+    href: "/about",
+  },
+  {
     label: "GitHub",
     href: "https://github.com/xenomech",
   },
   {
     label: "Blog",
     href: "/blog",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
   },
   {
     label: "Linkedin",

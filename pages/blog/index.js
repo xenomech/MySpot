@@ -6,6 +6,7 @@ import { categories } from "../../data/store";
 export default function Blog({ posts }) {
   return (
     <div className="h-4/6 py-10 mx-auto">
+      <h1 className="text-3xl p-5">All Posts</h1>
       <div className="w-full mx-auto">
         {categories.map((category) => {
           var key = 0;
@@ -13,7 +14,7 @@ export default function Blog({ posts }) {
             <details
               key={key}
               open
-              className="open:bg-white py-4 m-2 lg:m-4 p-5 dark:open:bg-zinc-900 open:ring-1 open:ring-black/5 open:shadow-lg lg:p-10 rounded-xl transition-all ease-in-out duration-200"
+              className="open:bg-white py-4 lg:m-4 p-5 dark:open:bg-zinc-900 open:ring-1 open:ring-black/5 open:shadow-lg lg:p-10 rounded-xl transition-all ease-in-out duration-200"
             >
               <summary className="text-xl font-medium p-2 leading-6 select-none">
                 {category.id}
@@ -23,7 +24,7 @@ export default function Blog({ posts }) {
                   key += 1;
                   return (
                     <Link href={`/blog/${item.slug}`} key={key + 1}>
-                      <a>
+                      <a className="my-2">
                         <Card frontMatter={item.frontmatter} index={key} />
                       </a>
                     </Link>

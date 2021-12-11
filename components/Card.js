@@ -1,9 +1,9 @@
 export default function Card({ frontMatter, index }) {
   return (
-    <div className="w-full flex justify-between my-2 lg:p-5 items-center lg:text-xl hover:translate-x-5  rounded-md transition-all duration-200 ease-in-out">
+    <div className="w-full flex justify-between my-2 p-2 items-center lg:text-xl hover:translate-x-5  rounded-md transition-all duration-200 ease-in-out">
       <div className="flex justify-between items-center">
         <p className="px-2 text-gray-600">{index}</p>
-        <p className="px-2 break-words">{frontMatter.title}</p>
+        <p className="px-2">{frontMatter.title}</p>
       </div>
       <div className="flex items-center justify-between">
         <p className="px-2 hidden lg:flex">{frontMatter.readingTime.text}</p>

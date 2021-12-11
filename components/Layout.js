@@ -22,7 +22,7 @@ export default function Layout(props) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <div className="md:w-6/12 md:mx-auto min-h-screen p-4">{children}</div>
+      <div className="xl:w-6/12 lg:mx-auto min-h-screen p-4">{children}</div>
     </>
   );
 }

@@ -4,6 +4,7 @@ import Navbar from "../components/Nav";
 import { MDXProvider } from "@mdx-js/react";
 import { ThemeProvider } from "next-themes";
 import Footer from "../components/Footer";
+import Container from "../components/Container";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -11,6 +12,7 @@ function MyApp({ Component, pageProps }) {
       <MDXProvider>
         <Layout>
           <Navbar />
+          <Container />
           <Component {...pageProps} />
           <Footer />
         </Layout>

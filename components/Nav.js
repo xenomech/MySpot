@@ -7,16 +7,17 @@ import { useRouter } from "next/router";
 export default function Navbar() {
   const currentRoute = useRouter();
   const currentRouteClasses =
-    "pr-1 p-2 lg:p-3 mr-2 flex justify-center items-center rounded-md hover:bg-gray-300 dark:hover:bg-black transition-all ease-in-out duration-100 ";
+    "pr-1 p-2 lg:p-3 mr-2 flex justify-center items-center rounded-md hover:bg-gray-200 dark:hover:bg-black transition-all ease-in-out duration-100 ";
   return (
     <div>
-      <nav className="text-xl font-sans py-2 my-2 lg:flex justify-between items-center">
+      <nav className="text-xl md:text-2xl font-sans py-2 my-2 lg:flex justify-between items-center">
         <div className="flex justify-between items-center">
           <Link href="/">
             <a
               className={
                 currentRoute.route === "/"
-                  ? currentRouteClasses + "font-semibold"
+                  ? currentRouteClasses +
+                    "font-medium bg-gray-200 dark:bg-black"
                   : currentRouteClasses
               }
             >
@@ -33,7 +34,8 @@ export default function Navbar() {
               <a
                 className={
                   currentRoute.route === item.url
-                    ? currentRouteClasses + "font-bold"
+                    ? currentRouteClasses +
+                      "font-medium bg-gray-200 dark:bg-black"
                     : currentRouteClasses
                 }
               >
@@ -41,7 +43,7 @@ export default function Navbar() {
                 <span
                   className={
                     currentRoute.route === item.url
-                      ? "md:mx-2 font-bold"
+                      ? "md:mx-2 font-medium"
                       : "md:mx-2"
                   }
                 >

@@ -12,8 +12,9 @@ function MyApp({ Component, pageProps }) {
       <MDXProvider>
         <Layout>
           <Navbar />
-          <Container />
-          <Component {...pageProps} />
+          <Container>
+            <Component {...pageProps} />
+          </Container>
           <Footer />
         </Layout>
       </MDXProvider>

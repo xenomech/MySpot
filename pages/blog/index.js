@@ -5,7 +5,7 @@ import { categories } from "../../data/store";
 
 export default function Blog({ posts }) {
   return (
-    <div className="p-3 lg:py-10 mx-auto">
+    <div className="p-3 pt-5 pb-10 mx-auto">
       <h1 className="text-3xl p-5">All Posts</h1>
       <div className="w-full mx-auto">
         {categories.map((category) => {
@@ -14,7 +14,7 @@ export default function Blog({ posts }) {
             <details
               key={key}
               open
-              className="open:bg-white py-4 lg:m-4 p-5 dark:open:bg-zinc-900 open:ring-1 open:ring-black/5 open:shadow-lg lg:p-10 rounded-xl transition-all ease-in-out duration-200"
+              className="open:bg-white py-4 sm:m-4 p-5 dark:open:bg-zinc-900 open:ring-1 open:ring-black/5 open:shadow-lg sm:p-10 rounded-xl transition-all ease-in-out duration-200"
             >
               <summary className="text-xl font-medium p-2 leading-6 select-none">
                 {category.id}

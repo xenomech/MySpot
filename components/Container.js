@@ -1,3 +1,3 @@
 export default function Container({ children }) {
-  return <div className="lg:mx-auto">{children}</div>;
+  return <div className="sm:mx-auto">{children}</div>;
 }

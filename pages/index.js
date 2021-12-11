@@ -9,18 +9,18 @@ import Image from "next/image";
 export default function Home({ posts, snippets }) {
   return (
     <Container>
-      <div className="my-5 lg:py-10">
+      <div className="my-5 sm:py-10">
         <div className="w-full">
           {/* if needed add a rounded profile icon */}
           <div>
-            <h1 className="py-1 font-bold text-3xl lg:text-5xl tracking-tight mb-1 text-black dark:text-white">
+            <h1 className="py-1 font-bold text-3xl sm:text-5xl tracking-tight mb-1 text-black dark:text-white">
               Gokul Suresh
             </h1>
-            <h2 className="py-1 lg:px-1 text-gray-700 dark:text-gray-200 mb-4 text-2xl">
+            <h2 className="py-1 sm:px-1 text-gray-700 dark:text-gray-200 mb-4 text-2xl">
               Product Developer @ SurveySparrow
             </h2>
             {/* add social icons */}
-            <div className="p-1 text-xl text-gray-700 dark:text-gray-200">
+            <div className="md:p-1 text-xl text-gray-700 dark:text-gray-200">
               <p className="text-2xl">
                 Hey ! <span className={styles.wavingHand}>👋</span>
               </p>
@@ -32,7 +32,7 @@ export default function Home({ posts, snippets }) {
             </div>
           </div>
         </div>
-        <div className="my-5 lg:my-10">
+        <div className="my-3 sm:my-6">
           <h1 className="py-5 font-semibold text-2xl tracking-tight mb-1 text-black dark:text-white">
             Latest posts
           </h1>
@@ -48,7 +48,7 @@ export default function Home({ posts, snippets }) {
             })}
           </div>
         </div>
-        <div className="my-10">
+        <div className="my-3 sm:my-6">
           <h1 className="py-5 font-semibold text-2xl tracking-tight mb-1 text-black dark:text-white">
             Snippets
           </h1>
@@ -64,7 +64,7 @@ export default function Home({ posts, snippets }) {
             })}
           </div>
         </div>
-        <div className="my-10">
+        <div className="my-3 sm:my-6">
           <h1 className="py-5 font-semibold text-2xl tracking-tight mb-1 text-black dark:text-white">
             Publications
           </h1>

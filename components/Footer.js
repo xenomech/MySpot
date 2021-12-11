@@ -3,10 +3,10 @@ import { footerItems } from "../data/store";
 
 export default function Footer() {
   return (
-    <div className="lg:text-lg">
-      <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
-      <div className="lg:flex-row flex-col flex justify-between items-start text-gray-800 dark:text-gray-200 ">
-        <div className="text-gray-600 dark:text-zinc-300  grid grid-cols-3 gap-x-5 p-2">
+    <div className="sm:text-lg">
+      <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-5" />
+      <div className="xl:flex-row flex-col flex justify-between items-start text-gray-800 dark:text-gray-200 ">
+        <div className="text-gray-600 dark:text-zinc-300  grid grid-cols-3 gap-x-5 px-2">
           {footerItems.map((items, index) => {
             return (
               <Link href={items.href} key={index + 1}>
@@ -18,7 +18,7 @@ export default function Footer() {
           })}
         </div>
         <div className="text-gray-600 dark:text-gray-500">
-          <p className="p-1 m-3 md:p-0 font-mono tracking-tighter">
+          <p className="p-1 m-3 font-mono tracking-tighter">
             Build with Next.js 12
           </p>
         </div>

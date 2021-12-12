@@ -6,7 +6,7 @@ export default function Footer() {
     <div className="pb-24">
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-5" />
       <div className="xl:flex-row flex-col flex justify-between items-start text-gray-800 dark:text-gray-200 ">
-        <div className="text-gray-600 dark:text-zinc-300  grid grid-cols-3 gap-x-5">
+        <div className="text-gray-600 dark:text-zinc-400 grid grid-cols-3 gap-x-3 md:gap-x-5">
           {footerItems.map((items, index) => {
             return (
               <FooterLinks
@@ -33,7 +33,7 @@ export default function Footer() {
 const FooterLinks = ({ href, label }) => {
   return (
     <Link href={href}>
-      <a className="col-span-1 p-2 hover:text-gray-400 text-gray-500 transition-all duration-100 ease-in-out">
+      <a className="col-span-1 p-2 hover:text-gray-400 transition-all duration-100 ease-in-out">
         {label}
       </a>
     </Link>

@@ -8,9 +8,9 @@ export default function Blog({ posts }) {
     <div className="p-3 pt-5 pb-10 mx-auto">
       <div className="flex items-center justify-start p-5">
         <h1 className="text-xl px-2">All Posts</h1>
-        <div className="relative w-7 h-7 dark:bg-blue-500 bg-blue-400 text-white dark:text-gray-800 rounded-full ">
-          <p className="text-md absolute top-0.5 left-2.5">{posts.length}</p>
-        </div>
+        <p className="text-md p-1 px-3 rounded-full bg-blue-500">
+          {posts.length}
+        </p>
       </div>
       <div className="w-full mx-auto">
         {categories.map((category) => {

@@ -1,19 +1,22 @@
 import { MDXRemote } from "next-mdx-remote";
-// import Layout from "../../components/layout";
+import MDXComponents from "../../components/MDXComponents";
 import { getAllFiles, getFileBySlug } from "../../lib/lib";
 
 const Snippets = ({ mdxSource, frontmatter }) => {
   return (
-    <div className="py-12">
-      <h1 className="font-bold py-2 my-2 text-3xl">{frontmatter.title}</h1>
-      <h2 className="font-medium italic py-2 my-2 text-xl">
-        {frontmatter.date}
-        {" • "}
-        {frontmatter.readingTime.text}
-      </h2>
-
-      <article className="min-w-full prose prose-xl dark:prose-dark">
-        <MDXRemote {...mdxSource} />
+    <div className="px-5 md:p-5">
+      <div className="pb-5">
+        <h1 className="font-semibold py-2 my-2 text-2xl sm:text-4xl">
+          {frontmatter.title}
+        </h1>
+        <h2 className="font-medium text-gray-600 dark:text-gray-300 py-2 text-lg">
+          {frontmatter.date}
+          {" • "}
+          {frontmatter.readingTime.text}
+        </h2>
+      </div>
+      <article className="min-w-full py-2 prose prose-xl dark:prose-dark">
+        <MDXRemote {...mdxSource} components={MDXComponents} />
       </article>
     </div>
   );

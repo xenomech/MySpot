@@ -29,6 +29,7 @@ module.exports = {
               "&:hover": {
                 color: theme("colors.blue.700"),
               },
+              textDecoration: "none",
               code: { color: theme("colors.blue.400") },
             },
             thead: {
@@ -43,6 +44,7 @@ module.exports = {
           css: {
             color: theme("colors.gray.200"),
             a: {
+              textDecoration: "none",
               color: theme("colors.blue.400"),
               "&:hover": {
                 color: theme("colors.blue.600"),

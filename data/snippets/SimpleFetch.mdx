@@ -1,0 +1,40 @@
+---
+title: Fetch Data on load React
+slug: simpleFetch
+date: 2021-04-27
+excerpt: Fetch data from a random url on page load
+langtabs: [React]
+draft: false
+---
+
+Fetch random thumbnail data from <a href="https://jsonplaceholder.typicode.com/">jsonplaceholder</a> on page load and display it.
+(using axios for CRUD operations)
+
+<a href="https://codesandbox.io/s/fetch-random-data-l190v?file=/src/App.js">
+  Visit codeSandbox
+</a>
+
+```js
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+export default function App() {
+  const [imgdat, setImgdat] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/photos")
+      .then(({ data }) => {
+        setImgdat(data);
+      });
+  }, []);
+
+  return (
+    <div className="App">
+      {imgdat.map((item, index) => {
+        return <img alt="data" src={item.thumbnailUrl} key={index} />;
+      })}
+      <h1>Data from JSON Placeholder</h1>
+    </div>
+  );
+}
+```

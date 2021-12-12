@@ -1,7 +1,11 @@
 import Image from "next/image";
 
 function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+  return (
+    <div className="w-full flex justify-center">
+      <Image alt={props.alt} className="rounded-lg" {...props} />
+    </div>
+  );
 }
 
 const MDXComponents = {

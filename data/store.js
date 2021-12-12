@@ -26,31 +26,31 @@ export const categories = [
 ];
 export const footerItems = [
   {
-    label: "Home",
+    label: "🏠 Home",
     href: "/",
   },
   {
-    label: "About",
+    label: "🙋🏻 About",
     href: "/about",
   },
   {
-    label: "GitHub",
+    label: "🐱 GitHub",
     href: "https://github.com/xenomech",
   },
   {
-    label: "Blog",
+    label: "📰 Blog",
     href: "/blog",
   },
   {
-    label: "Contact",
+    label: "☎️ Contact",
     href: "/about",
   },
   {
-    label: "Linkedin",
+    label: "🌏 Linkedin",
     href: "https://www.linkedin.com/in/gokulsmenon227",
   },
   {
-    label: "Snippets",
+    label: "📃 Snippets",
     href: "/snippets",
   },
 ];

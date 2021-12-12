@@ -4,13 +4,14 @@ import Link from "next/link";
 
 export default function Snippets({ snippets }) {
   return (
-    <div className="py-3 sm:py-10 mx-auto h-96">
+    <div className="p-3 pt-5 pb-10 mx-auto h-96">
       <div className="flex items-center justify-start p-5">
-        <h1 className="text-2xl px-2">Snippets </h1>
-        <div className="relative w-7 h-7 dark:bg-blue-500 bg-blue-400 text-white dark:text-gray-800 rounded-full ">
-          <p className="text-lg absolute top-0 left-2">{snippets.length}</p>
-        </div>
+        <h1 className="text-xl px-2">Snippets</h1>
+        <p className="text-md p-1 px-3 rounded-full bg-red-500">
+          {snippets.length}
+        </p>
       </div>
+
       <div className="w-full mx-auto">
         {snippets.map((item, index) => {
           return (
@@ -28,7 +29,6 @@ export default function Snippets({ snippets }) {
 
 export async function getStaticProps() {
   const snippets = await getAllFiles("snippets");
-
   const data = await getTitleFromFrontmatter(snippets, "snippets");
   return {
     props: {

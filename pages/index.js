@@ -18,7 +18,7 @@ export default function Home({ posts, snippets }) {
             <h2 className="py-1 sm:px-1 text-gray-700 dark:text-gray-200 mb-4 text-2xl">
               Product Developer @
               <a
-                className="text-green-600 px-2"
+                className="text-green-600 mx-2"
                 href="https://surveysparrow.com/"
               >
                 SurveySparrow

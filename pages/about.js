@@ -8,7 +8,7 @@ export default function About() {
   return (
     <Container>
       <div>
-        <div className="px-5 mx-auto xl:flex xl:flex-row-reverse xl:justify-between flex-col items-center justify-center">
+        <div className="px-2 mx-auto xl:flex xl:flex-row-reverse xl:justify-between flex-col items-center justify-center">
           <div className="p-5 mx-10 flex justify-center items-center">
             <Image
               src={"/static/images/gokul.jpeg"}
@@ -19,10 +19,10 @@ export default function About() {
             />
           </div>
           <div className="text-center xl:text-left">
-            <h1 className="py-1 font-bold text-4xl sm:text-5xl tracking-tight mb-1 text-black dark:text-white">
+            <h1 className="py-1 font-bold text-4xl tracking-tight mb-1 text-black dark:text-white">
               Gokul Suresh
             </h1>
-            <h2 className="py-1 sm:px-1 text-gray-700 dark:text-gray-200 mb-4 text-xl">
+            <h2 className="py-1 sm:px-1 text-gray-700 dark:text-gray-200 mb-4 text-2xl">
               Product Developer @
               <a
                 className="text-green-600 px-2"
@@ -54,7 +54,7 @@ export default function About() {
           </div>
         </div>
         <div className="p-5 text-xl text-gray-700 dark:text-gray-200">
-          <p className="text-2xl">
+          <p className="text-xl">
             Hey ! <span className={styles.wavingHand}>👋</span>
           </p>
           <p>

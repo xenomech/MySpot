@@ -8,7 +8,7 @@ export default function Blog({ posts }) {
     <div className="p-3 pt-5 pb-10 mx-auto">
       <div className="flex items-center justify-start p-5">
         <h1 className="text-xl px-2">All Posts</h1>
-        <p className="text-md p-1 px-3 rounded-full bg-blue-500">
+        <p className="text-md p-1 px-3 text-white rounded-full bg-blue-500">
           {posts.length}
         </p>
       </div>

@@ -7,7 +7,7 @@ export default function Snippets({ snippets }) {
     <div className="p-3 pt-5 pb-10 mx-auto h-96">
       <div className="flex items-center justify-start p-5">
         <h1 className="text-xl px-2">Snippets</h1>
-        <p className="text-md p-1 px-3 rounded-full bg-red-500">
+        <p className="text-md p-1 px-3 text-white rounded-full bg-red-500">
           {snippets.length}
         </p>
       </div>

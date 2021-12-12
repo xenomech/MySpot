@@ -1,6 +1,6 @@
 export default function Card({ frontMatter, index }) {
   return (
-    <div className="w-full flex justify-between my-2 p-2 items-center sm:text-xl hover:translate-x-5  rounded-md transition-all duration-200 ease-in-out">
+    <div className="w-full flex justify-between my-2 p-2 font-light items-center sm:text-xl hover:translate-x-5  rounded-md transition-all duration-200 ease-in-out">
       <div className="flex justify-between items-center">
         <p className="px-2 text-gray-600">{index}</p>
         <p className="px-2">{frontMatter.title}</p>

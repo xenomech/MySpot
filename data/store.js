@@ -72,4 +72,9 @@ export const experience = [
     role: "Product Developer",
     timeLine: "July 2021 - Present",
   },
+  {
+    company: "Freelance",
+    role: "Developer",
+    timeLine: "October 2019 - July 2021",
+  },
 ];

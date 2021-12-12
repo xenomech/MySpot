@@ -23,7 +23,6 @@ export default Snippets;
 
 export async function getStaticPaths() {
   const snippets = await getAllFiles("snippets");
-  // console.log(posts)
   return {
     paths: snippets.map((item) => ({
       params: {
@@ -36,6 +35,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const snippets = await getFileBySlug("snippets", params.slug);
-  //   console.log(post);
+
   return { props: snippets };
 }

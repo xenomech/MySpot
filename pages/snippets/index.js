@@ -28,9 +28,8 @@ export default function Snippets({ snippets }) {
 
 export async function getStaticProps() {
   const snippets = await getAllFiles("snippets");
-  //   console.log(posts);
+
   const data = await getTitleFromFrontmatter(snippets, "snippets");
-  //   console.log(data);
   return {
     props: {
       snippets: data,

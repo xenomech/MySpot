@@ -12,18 +12,21 @@ export default function Home({ posts, snippets }) {
         <div className="w-full">
           {/* if needed add a rounded profile icon */}
           <div>
-            <h1 className="py-1 font-bold text-3xl sm:text-5xl tracking-tight mb-1 text-black dark:text-white">
+            <h1 className="py-1 font-bold text-4xl tracking-tight mb-1 text-black dark:text-white">
               Gokul Suresh
             </h1>
             <h2 className="py-1 sm:px-1 text-gray-700 dark:text-gray-200 mb-4 text-2xl">
-              Product Developer @{" "}
-              <a className="text-green-600" href="https://surveysparrow.com/">
+              Product Developer @
+              <a
+                className="text-green-600 px-2"
+                href="https://surveysparrow.com/"
+              >
                 SurveySparrow
               </a>
             </h2>
             {/* add social icons */}
             <div className="md:p-1 text-xl text-gray-700 dark:text-gray-200">
-              <p className="text-2xl">
+              <p className="text-xl">
                 Hey ! <span className={styles.wavingHand}>👋</span>
               </p>
               <p>
@@ -35,7 +38,7 @@ export default function Home({ posts, snippets }) {
           </div>
         </div>
         <div className="my-3 sm:my-6">
-          <h1 className="py-5 font-semibold text-2xl tracking-tight mb-1 text-black dark:text-white">
+          <h1 className="py-5 text-xl tracking-tight mb-1 text-black dark:text-white">
             Latest posts
           </h1>
           <div>
@@ -51,7 +54,7 @@ export default function Home({ posts, snippets }) {
           </div>
         </div>
         <div className="my-3 sm:my-6">
-          <h1 className="py-5 font-semibold text-2xl tracking-tight mb-1 text-black dark:text-white">
+          <h1 className="py-5  text-xl tracking-tight mb-1 text-black dark:text-white">
             Snippets
           </h1>
           <div>
@@ -67,24 +70,24 @@ export default function Home({ posts, snippets }) {
           </div>
         </div>
         <div className="my-3 sm:my-6">
-          <h1 className="py-5 font-semibold text-2xl tracking-tight mb-1 text-black dark:text-white">
+          <h1 className="py-5 text-xl tracking-tight mb-1 text-black dark:text-white">
             Publications
           </h1>
           <div className="">
             {publications.map((item, index) => {
               return (
                 <div key={index + 1}>
-                  <div className="flex transition-all ease-in-out duration-400  hover:translate-x-3 justify-start items-center w-full py-5">
+                  <div className="flex transition-all ease-in-out duration-400  hover:translate-x-3 justify-start items-center w-full py-2">
                     <div className="px-5">
                       <Link href={item.url}>
-                        <a>
-                          <a className="break-words text-xl">{item.title}</a>
-                          <br />
-                          <Link href={item.publishedIn.publisherBaseUrl}>
-                            <a className="break-words font-medium text-gray-400">
-                              {item.publishedIn.publisherLabel}
-                            </a>
-                          </Link>
+                        <a className="break-words font-light text-lg">
+                          {item.title}
+                        </a>
+                      </Link>
+                      <br />
+                      <Link href={item.publishedIn.publisherBaseUrl}>
+                        <a className="break-words font-normal text-gray-400">
+                          {item.publishedIn.publisherLabel}
                         </a>
                       </Link>
                     </div>
@@ -110,7 +113,6 @@ export async function getStaticProps() {
   snippetsData.sort(
     (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
   );
-  // console.log(data);
   return {
     props: {
       posts: postData,

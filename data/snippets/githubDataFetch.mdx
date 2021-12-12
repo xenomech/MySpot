@@ -1,0 +1,39 @@
+---
+title: Search Github
+slug: githubDataFetch
+date: 2021-06-20
+excerpt: Search github
+langtabs: [nodejs]
+draft: false
+---
+
+Search github
+
+```js
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+const fetch = require("node-fetch");
+readline.question("Enter query : ", (query) => {
+  fetch(`https://api.github.com/search/repositories?q=${query}`)
+    .then((response) => response.json())
+    .then((data) => {
+      let newdata = new Map();
+      data.items.forEach((item) => {
+        newdata.set(item.html_url, item.full_name);
+      });
+      console.log(newdata);
+    });
+
+  readline.close();
+});
+```
+
+<iframe
+  src="https://codesandbox.io/embed/nodefetchgithub-civn7?fontsize=14&hidenavigation=1&theme=dark"
+  className="rounded-xl w-full h-96"
+  title="nodefetchgithub"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>

@@ -16,7 +16,7 @@ export const Card = ({ date, slug, excerpt, title, langtabs }) => {
             )
           })}
         </LangTabscontainer>
-      </CardWrapper>{" "}
+      </CardWrapper>
     </A>
   )
 }

@@ -59,3 +59,12 @@ export const SocialsButton = styled.div`
     }
   }
 `
+
+export const MigrationWrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0rem;
+  align-items: center;
+  justify-content: center;
+`

@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className="pb-24">
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-5" />
-      <div className="xl:flex-row flex-col flex justify-between items-start text-gray-800 dark:text-gray-200 ">
+      <div className="xl:flex-row flex-col flex justify-between sm:items-center text-gray-800 dark:text-gray-200 ">
         <div className="text-gray-600 dark:text-zinc-400 grid grid-cols-3 gap-x-2 md:gap-x-5">
           {footerItems.map((items, index) => {
             return (

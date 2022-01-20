@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { FaGithub, FaRegEnvelope, FaLinkedin } from "react-icons/fa";
 import Container from "../components/Container";
-import ExperienceCard from "../components/ExperienceCard";
+import Experience from "../components/Experience";
+import { ExperienceSVG } from "../data/assets";
 import { experience } from "../data/store";
 import styles from "../styles/extra.module.css";
 export default function About() {
@@ -27,6 +28,7 @@ export default function About() {
               <a
                 className="text-green-600 px-2"
                 href="https://surveysparrow.com/"
+                target="_blank"
               >
                 SurveySparrow
               </a>
@@ -34,57 +36,49 @@ export default function About() {
             <div className="p-2 flex items-center xl:justify-start justify-center">
               <a href="https://github.com/xenomech/">
                 <FaGithub
-                  size={35}
+                  size={30}
                   className="mr-4 hover:scale-110 hover:text-gray-700 transition-all duration-200 ease-in-out"
                 />
               </a>
               <a href="https://www.linkedin.com/in/gokulsmenon227">
                 <FaLinkedin
-                  size={35}
+                  size={30}
                   className="mr-4 hover:scale-110 hover:text-blue-800 transition-all duration-200 ease-in-out"
                 />
               </a>
               <a href="mailto:gokulsmenon227@gmail.com">
                 <FaRegEnvelope
-                  size={35}
+                  size={30}
                   className="mr-4 hover:scale-110 hover:text-red-600 transition-all duration-200 ease-in-out"
                 />
               </a>
             </div>
           </div>
         </div>
-        <div className="p-5 text-xl text-gray-700 dark:text-gray-200">
-          <p className="text-xl">
-            Hey ! <span className={styles.wavingHand}>👋</span>
-          </p>
-          <p>
-            Welcome to my spot on the web. I am just an aspiring developer. I
-            build and occasionally design websites and apps. I am a self-taught
-            developer from Kochi, Kerala. I love listening to music, ricing
-            Linux distros, and trying out different setups!
-          </p>
-        </div>
-        <div className="p-5">
-          <div className="flex items-center justify-start text-xl">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="mx-3 h-6 w-6 text-green-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
-            </svg>
-            <h2>Experience</h2>
+        <div className="flex items-start flex-col xl:flex-row justify-between">
+          <div className="p-5 xl:w-3/5 text-xl text-gray-700 dark:text-gray-200">
+            <p className="text-xl">
+              Hey ! <span className={styles.wavingHand}>👋</span>
+            </p>
+            <p className="pb-2">
+              I am a self-taught developer from Kochi, Kerala. I love listening
+              to music, ricing Linux distros, and trying out different things! I
+              always like learning new things.
+            </p>
+            <p className="pb-2">
+              I am currently part of the team at SurveySparrow building an
+              exeptional experience management platform.
+            </p>
           </div>
-          {experience.map((item, index) => (
-            <ExperienceCard data={item} key={index + 1} />
-          ))}
+          <div className="p-5">
+            <div className="flex items-center justify-start text-xl">
+              <ExperienceSVG style="mx-3 h-6 w-6" />
+              <h2>Experience</h2>
+            </div>
+            {experience.map((item, index) => (
+              <Experience data={item} key={index + 1} />
+            ))}
+          </div>
         </div>
       </div>
     </Container>

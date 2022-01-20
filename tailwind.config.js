@@ -32,6 +32,10 @@ module.exports = {
               textDecoration: "none",
               code: { color: theme("colors.blue.400") },
             },
+            pre: {
+              backgroundColor: theme("colors.gray.100"),
+              color: theme("colors.gray.500"),
+            },
             thead: {
               borderBottomColor: theme("colors.gray.200"),
             },
@@ -50,6 +54,10 @@ module.exports = {
                 color: theme("colors.blue.600"),
               },
               code: { color: theme("colors.blue.400") },
+            },
+            pre: {
+              backgroundColor: theme("colors.neutral.900"),
+              color: theme("colors.gray.200"),
             },
             blockquote: {
               borderLeftColor: theme("colors.gray.700"),

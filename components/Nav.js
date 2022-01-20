@@ -2,10 +2,9 @@ import Link from "next/link";
 import { navItems } from "../data/store";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { SunSVG, MoonSVG } from "../data/assets";
 
 export default function Navbar() {
-  const currentRoute = useRouter();
   const currentRouteClasses =
     "p-3 mr-2 flex justify-center items-center rounded-md hover:bg-gray-200 dark:hover:bg-black transition-all ease-in-out duration-100 ";
   return (
@@ -14,12 +13,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           <Link href="/">
             <a
-              className={
-                currentRoute.route === "/"
-                  ? currentRouteClasses +
-                    "font-medium bg-neutral-100 dark:bg-black"
-                  : currentRouteClasses
-              }
+              className={currentRouteClasses}
             >
               xenomech
             </a>
@@ -32,20 +26,11 @@ export default function Navbar() {
           {navItems.map((item, index) => (
             <Link href={item.url} key={index + 1}>
               <a
-                className={
-                  currentRoute.route === item.url
-                    ? currentRouteClasses +
-                      "font-medium bg-neutral-100 dark:bg-black"
-                    : currentRouteClasses
-                }
+                className={currentRouteClasses}
               >
                 <span className="md:mx-1">{item.icon}</span>
                 <span
-                  className={
-                    currentRoute.route === item.url
-                      ? "ml-1 font-medium"
-                      : "ml-1"
-                  }
+                  className={"ml-1"}
                 >
                   {item.label}
                 </span>
@@ -62,14 +47,16 @@ export default function Navbar() {
 }
 
 export const DarkmodeSwitcher = () => {
-  const { theme, setTheme } = useTheme("light");
+  const { resolvedTheme, theme, setTheme } = useTheme("light");
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
   const themeSwitch = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
   };
+
   if (!isMounted) return null;
 
   return (
@@ -77,37 +64,9 @@ export const DarkmodeSwitcher = () => {
       onClick={themeSwitch}
       className="hover:bg-gray-300 dark:hover:bg-black transition-all ease-in-out duration-100 p-2 rounded-md"
     >
-      {theme === "light" ? (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-          />
-        </svg>
-      ) : (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-          />
-        </svg>
-      )}
+      {
+        theme === "light" ? <SunSVG style="h-6 w-6" /> : <MoonSVG style="h-6 w-6" />
+      }
     </button>
   );
 };

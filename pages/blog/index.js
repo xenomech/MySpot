@@ -46,8 +46,10 @@ export default function Blog({ posts }) {
 
 export async function getStaticProps() {
   const posts = await getAllFiles("posts");
-
   const data = await getTitleFromFrontmatter(posts, "posts");
+  data.sort(
+    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  );
   return {
     props: {
       posts: data,

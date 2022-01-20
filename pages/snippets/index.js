@@ -30,6 +30,9 @@ export default function Snippets({ snippets }) {
 export async function getStaticProps() {
   const snippets = await getAllFiles("snippets");
   const data = await getTitleFromFrontmatter(snippets, "snippets");
+  data.sort(
+    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  );
   return {
     props: {
       snippets: data,

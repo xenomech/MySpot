@@ -8,7 +8,7 @@ import Container from "../components/Container";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider enableSystem attribute="class">
+    <ThemeProvider enableSystem enableColorScheme attribute="class">
       <MDXProvider>
         <Layout>
           <Navbar />

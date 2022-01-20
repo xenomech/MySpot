@@ -1,6 +1,6 @@
 import { ArrowSVG } from "../data/assets";
 
-export default function Card({ frontMatter, index }) {
+export default function BlogCard({ frontMatter, index }) {
   return (
     <div className="w-full flex justify-between my-2 p-2 font-normal items-center sm:text-xl hover:translate-x-5  rounded-md transition-all duration-200 ease-in-out">
       <div className="flex justify-between items-center">

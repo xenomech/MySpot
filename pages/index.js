@@ -10,7 +10,6 @@ export default function Home({ posts, snippets }) {
     <Container>
       <div className="my-5 sm:py-10 p-2">
         <div className="w-full">
-          {/* if needed add a rounded profile icon */}
           <div>
             <h1 className="py-1 font-bold text-4xl tracking-tight mb-1 text-black dark:text-white">
               Gokul Suresh
@@ -20,19 +19,19 @@ export default function Home({ posts, snippets }) {
               <a
                 className="text-green-600 mx-2"
                 href="https://surveysparrow.com/"
+                target="_blank"
               >
                 SurveySparrow
               </a>
             </h2>
-            {/* add social icons */}
             <div className="md:p-1 text-xl text-gray-700 dark:text-gray-200">
               <p className="text-xl">
                 Hey ! <span className={styles.wavingHand}>👋</span>
               </p>
               <p>
-                Welcome to my spot on the web. I am just an aspiring developer.
-                I build and occasionally design websites and apps. I started
-                this blog to keep track of the things I do!
+                Welcome to my spot on the web. I am an aspiring developer. I
+                build and occasionally design websites and apps. I started this
+                blog to keep track of the things I do! Glad you are here!
               </p>
             </div>
           </div>
@@ -77,16 +76,22 @@ export default function Home({ posts, snippets }) {
             {publications.map((item, index) => {
               return (
                 <div key={index + 1}>
-                  <div className="flex transition-all ease-in-out duration-400  hover:translate-x-3 justify-start items-center w-full py-2">
+                  <div className="flex transition-all ease-in-out duration-400 hover:translate-x-3 justify-start items-center w-full py-2">
                     <div className="px-5">
                       <Link href={item.url}>
-                        <a className="break-words font-light text-lg">
+                        <a
+                          className="break-words font-normal text-lg"
+                          target="_blank"
+                        >
                           {item.title}
                         </a>
                       </Link>
                       <br />
                       <Link href={item.publishedIn.publisherBaseUrl}>
-                        <a className="break-words font-normal text-gray-400">
+                        <a
+                          className="break-words font-medium text-gray-400"
+                          target="_blank"
+                        >
                           {item.publishedIn.publisherLabel}
                         </a>
                       </Link>

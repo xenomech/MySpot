@@ -1,8 +1,16 @@
 import { MDXRemote } from "next-mdx-remote";
 import MDXComponents from "../../components/MDXComponents";
 import { getAllFiles, getFileBySlug } from "../../lib/lib";
+import Prism from "prismjs";
+import { useEffect } from "react";
+import "prismjs/components/prism-javascript";
 
 const Snippets = ({ mdxSource, frontmatter }) => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      Prism.highlightAll();
+    }
+  }, []);
   return (
     <div className="px-5 md:p-5">
       <div className="pb-5">
@@ -15,7 +23,7 @@ const Snippets = ({ mdxSource, frontmatter }) => {
           {frontmatter.readingTime.text}
         </h2>
       </div>
-      <article className="min-w-full py-2 prose prose-xl dark:prose-dark">
+      <article className="min-w-full py-2 prose xl:prose-xl dark:prose-dark">
         <MDXRemote {...mdxSource} components={MDXComponents} />
       </article>
     </div>
@@ -38,6 +46,5 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const snippets = await getFileBySlug("snippets", params.slug);
-
   return { props: snippets };
 }

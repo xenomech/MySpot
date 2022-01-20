@@ -1,9 +1,18 @@
 import { MDXRemote } from "next-mdx-remote";
+import { getAllFiles, getFileBySlug } from "../../lib/lib";
 import Container from "../../components/Container";
 import MDXComponents from "../../components/MDXComponents";
-import { getAllFiles, getFileBySlug } from "../../lib/lib";
+import Prism from "prismjs";
+import { useEffect } from "react";
+import "prismjs/components/prism-dart";
+import "prismjs/components/prism-bash";
 
 const Blog = ({ mdxSource, frontmatter }) => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      Prism.highlightAll();
+    }
+  }, []);
   return (
     <Container frontmatter={frontmatter}>
       <div className="px-5 md:p-5">
@@ -17,7 +26,7 @@ const Blog = ({ mdxSource, frontmatter }) => {
             {frontmatter.readingTime.text}
           </h2>
         </div>
-        <article className="min-w-full py-2 prose prose-xl dark:prose-dark">
+        <article className="min-w-full py-2 prose xl:prose-xl dark:prose-dark">
           <MDXRemote {...mdxSource} components={MDXComponents} />
         </article>
       </div>

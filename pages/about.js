@@ -1,14 +1,13 @@
 import Image from "next/image";
-import { FaGithub, FaRegEnvelope, FaLinkedin } from "react-icons/fa";
-import Container from "../components/Container";
-import Experience from "../components/Experience";
-import { ExperienceSVG } from "../data/assets";
-import { experience } from "../data/store";
+import { FaGithub, FaRegEnvelope, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Container, Experience } from "components";
+import { ExperienceSVG, experience } from "data/assets";
 import styles from "../styles/extra.module.css";
+
 export default function About() {
   return (
     <Container>
-      <div>
+      <div className="xl:py-36 xl:h-[75vh]">
         <div className="px-2 mx-auto xl:flex xl:flex-row-reverse xl:justify-between flex-col items-center justify-center">
           <div className="p-5 mx-10 flex justify-center items-center">
             <Image
@@ -24,14 +23,7 @@ export default function About() {
               Gokul Suresh
             </h1>
             <h2 className="py-1 sm:px-1 text-gray-700 dark:text-gray-200 mb-4 text-2xl">
-              Product Developer @
-              <a
-                className="text-green-600 px-2"
-                href="https://surveysparrow.com/"
-                target="_blank"
-              >
-                SurveySparrow
-              </a>
+              Software Engineer
             </h2>
             <div className="p-2 flex items-center xl:justify-start justify-center">
               <a href="https://github.com/xenomech/">
@@ -44,6 +36,12 @@ export default function About() {
                 <FaLinkedin
                   size={30}
                   className="mr-4 hover:scale-110 hover:text-blue-800 transition-all duration-200 ease-in-out"
+                />
+              </a>
+              <a href="https://twitter.com/justgokulsuresh">
+                <FaTwitter
+                  size={30}
+                  className="mr-4 hover:scale-110 hover:text-gray-700 transition-all duration-200 ease-in-out"
                 />
               </a>
               <a href="mailto:gokulsmenon227@gmail.com">
@@ -66,8 +64,8 @@ export default function About() {
               always like learning new things.
             </p>
             <p className="pb-2">
-              I am currently part of the team at SurveySparrow building an
-              exeptional experience management platform.
+              I am currently freelancing for companies, exploring tech, and
+              everything in between.
             </p>
           </div>
           <div className="p-5">

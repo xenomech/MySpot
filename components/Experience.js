@@ -1,4 +1,12 @@
-import { CheckMarkSVG } from "../data/assets";
+import { CheckMarkSVG } from "data/assets";
+
+/**
+ *@author Gokul Suresh <gokulsmenon227@gmail.com
+ *@param {Array} {data} 
+ *@description Component rendering out Experience from the Data provided in constants
+ *@todo : [] type def every data
+ */
+
 export default function Experience({ data }) {
   return (
     <div className="flex justify-start items-center w-full p-5">

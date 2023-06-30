@@ -1,9 +1,9 @@
-import Container from "../components/Container";
-import Card from "../components/Card";
+import { Container, Card } from "components";
+import { allPosts, allSnippets } from ".contentlayer/generated";
+import { publications } from "data/assets";
+import { returnSelectedFields } from "common";
 import Link from "next/link";
-import { getAllFiles, getTitleFromFrontmatter } from "../lib/lib";
 import styles from "../styles/extra.module.css";
-import { publications } from "../data/store";
 
 export default function Home({ posts, snippets }) {
   return (
@@ -15,22 +15,15 @@ export default function Home({ posts, snippets }) {
               Gokul Suresh
             </h1>
             <h2 className="py-1 sm:px-1 text-gray-700 dark:text-gray-200 mb-4 text-2xl">
-              Product Developer @
-              <a
-                className="text-green-600 mx-2"
-                href="https://surveysparrow.com/"
-                target="_blank"
-              >
-                SurveySparrow
-              </a>
+              Software Engineer
             </h2>
             <div className="md:p-1 text-xl text-gray-700 dark:text-gray-200">
               <p className="text-xl">
                 Hey ! <span className={styles.wavingHand}>👋</span>
               </p>
               <p>
-                Welcome to my spot on the web. I am an aspiring developer. I
-                build and occasionally design websites and apps. I started this
+                Welcome to my spot on the web. I am a software engineer who
+                builds and occasionally design websites and apps. I started this
                 blog to keep track of the things I do! Glad you are here!
               </p>
             </div>
@@ -44,9 +37,7 @@ export default function Home({ posts, snippets }) {
             {posts.slice(0, 4).map((item, index) => {
               return (
                 <Link href={`/blog/${item.slug}`} key={index + 1}>
-                  <a>
-                    <Card frontMatter={item.frontmatter} index={index + 1} />
-                  </a>
+                  <Card frontMatter={item} index={index + 1} />
                 </Link>
               );
             })}
@@ -60,9 +51,7 @@ export default function Home({ posts, snippets }) {
             {snippets.slice(0, 4).map((item, index) => {
               return (
                 <Link href={`/snippets/${item.slug}`} key={index + 1}>
-                  <a>
-                    <Card frontMatter={item.frontmatter} index={index + 1} />
-                  </a>
+                  <Card frontMatter={item} index={index + 1} />
                 </Link>
               );
             })}
@@ -79,21 +68,18 @@ export default function Home({ posts, snippets }) {
                   <div className="flex transition-all ease-in-out duration-400 hover:translate-x-3 justify-start items-center w-full py-2">
                     <div className="px-5">
                       <Link href={item.url}>
-                        <a
-                          className="break-words font-normal text-lg"
-                          target="_blank"
-                        >
+                        <p className="break-words font-normal text-lg">
                           {item.title}
-                        </a>
+                        </p>
                       </Link>
                       <br />
                       <Link href={item.publishedIn.publisherBaseUrl}>
-                        <a
+                        <p
                           className="break-words font-medium text-gray-400"
                           target="_blank"
                         >
                           {item.publishedIn.publisherLabel}
-                        </a>
+                        </p>
                       </Link>
                     </div>
                   </div>
@@ -108,20 +94,14 @@ export default function Home({ posts, snippets }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getAllFiles("posts");
-  const postData = await getTitleFromFrontmatter(posts, "posts");
-  const snippets = await getAllFiles("snippets");
-  const snippetsData = await getTitleFromFrontmatter(snippets, "snippets");
-  postData.sort(
-    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-  );
-  snippetsData.sort(
-    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-  );
+  const postData = returnSelectedFields(allPosts);
+  const snippetsData = returnSelectedFields(allSnippets);
+  postData.sort((a, b) => new Date(b.date) - new Date(a.date));
+  snippetsData.sort((a, b) => new Date(b.date) - new Date(a.date));
   return {
     props: {
-      posts: postData,
-      snippets: snippetsData,
+      posts: postData.filter((item) => !item.draft),
+      snippets: snippetsData.filter((item) => !item.draft),
     },
   };
 }

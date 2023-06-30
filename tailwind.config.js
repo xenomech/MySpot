@@ -19,6 +19,13 @@ module.exports = {
           800: "#222222",
           900: "#111111",
         },
+        custom: {
+          900: "#0B0A0A",
+        },
+      },
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        poppins: ["var(--font-poppins)"],
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -30,7 +37,12 @@ module.exports = {
                 color: theme("colors.blue.700"),
               },
               textDecoration: "none",
-              code: { color: theme("colors.blue.400") },
+            },
+            code: { color: theme("colors.blue.400") },
+            blockquote: {
+              borderLeftColor: theme("colors.blue.500"),
+              color: theme("colors.gray.500"),
+              fontStyle: "normal",
             },
             pre: {
               backgroundColor: theme("colors.gray.100"),
@@ -39,7 +51,6 @@ module.exports = {
             thead: {
               borderBottomColor: theme("colors.gray.200"),
             },
-            code: { color: theme("colors.gray.200") },
             "blockquote p:first-of-type::before": false,
             "blockquote p:last-of-type::after": false,
           },
@@ -53,15 +64,16 @@ module.exports = {
               "&:hover": {
                 color: theme("colors.blue.600"),
               },
-              code: { color: theme("colors.blue.400") },
             },
             pre: {
               backgroundColor: theme("colors.neutral.900"),
               color: theme("colors.gray.200"),
             },
+            code: { color: theme("colors.blue.400") },
             blockquote: {
-              borderLeftColor: theme("colors.gray.700"),
-              color: theme("colors.gray.300"),
+              borderLeftColor: theme("colors.blue.500"),
+              color: theme("colors.gray.100"),
+              fontStyle: "normal",
             },
             "h2,h3,h4": {
               color: theme("colors.gray.100"),
@@ -79,8 +91,10 @@ module.exports = {
             },
             strong: { color: theme("colors.gray.100") },
             thead: {
-              color: theme("colors.gray.100"),
-              borderBottomColor: theme("colors.gray.600"),
+              th: {
+                color: theme("colors.gray.100"),
+                borderBottomColor: theme("colors.gray.600"),
+              },
             },
             tbody: {
               tr: {

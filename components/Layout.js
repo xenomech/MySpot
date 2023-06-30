@@ -1,28 +1,14 @@
-import Head from "next/head";
 
+/**
+ * 
+ *@description Layout for all the Pages container comes under layout
+ */
 export default function Layout(props) {
-  const { children, ...customMeta } = props;
-  const meta = {
-    title: "Gokul Suresh - Software Developer ",
-    description: "All my scribbles are available here",
-    type: "website",
-    ...customMeta,
-  };
+  const { children } = props;
+  //TODO : customMeta Fix; to dynamically accept it from heirarchy of components...
   return (
     <>
-      <Head>
-        <title>{meta.title}</title>
-        <meta content={meta.description} name="description" />
-        <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Gokul Suresh" />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
-        {meta.date && (
-          <meta property="article:published_time" content={meta.date} />
-        )}
-      </Head>
-      <div className="lg:w-6/12 sm:mx-auto min-h-screen p-4">{children}</div>
+      <div className="lg:w-7/12 sm:mx-auto min-h-screen p-4">{children}</div>
     </>
   );
 }

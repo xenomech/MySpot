@@ -1,23 +1,31 @@
 import "../styles/globals.css";
-import Layout from "../components/Layout";
-import Navbar from "../components/Nav";
-import { MDXProvider } from "@mdx-js/react";
 import { ThemeProvider } from "next-themes";
-import Footer from "../components/Footer";
-import Container from "../components/Container";
+import { Footer, Navbar, Layout } from "components";
+import { Inter, Poppins } from "next/font/google";
 
+/* Layout wraps nav container and footer together */
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["200", "400", "600"],
+});
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider enableSystem enableColorScheme attribute="class">
-      <MDXProvider>
+      <main className={`${inter.variable} ${poppins.variable}`}>
         <Layout>
           <Navbar />
-          <Container>
-            <Component {...pageProps} />
-          </Container>
+          <Component {...pageProps} />
           <Footer />
         </Layout>
-      </MDXProvider>
+      </main>
     </ThemeProvider>
   );
 }

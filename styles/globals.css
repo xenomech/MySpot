@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   text-align: left;
@@ -206,4 +212,13 @@ pre[class*="language-"] {
 
 .token.variable {
   color: #e53935;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  grid-auto-flow: dense;
+  align-items: center;
+  justify-items: center;
 }

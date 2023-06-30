@@ -1,58 +1,72 @@
-import { getAllFiles, getTitleFromFrontmatter } from "../../lib/lib";
-import Card from "../../components/Card";
 import Link from "next/link";
-import { categories } from "../../data/store";
-
+import { Card, FilterPills, Container } from "components";
+import { allPosts } from ".contentlayer/generated";
+import { returnSelectedFields } from "common";
+import { categories } from "data/assets";
+import { useState } from "react";
+import { ArrowSVG } from "data/assets/assets";
 export default function Blog({ posts }) {
+  const [filter, setFilter] = useState("All");
+  const meta = {
+    title: "Blogs by Gokul Suresh",
+  };
   return (
-    <div className="p-3 pt-5 pb-10 mx-auto">
-      <div className="flex items-center justify-start p-5">
-        <h1 className="text-xl px-2">All Posts</h1>
-        <p className="text-md p-1 px-3 text-white rounded-full bg-blue-500">
-          {posts.length}
-        </p>
-      </div>
-      <div className="w-full mx-auto">
-        {categories.map((category) => {
-          var key = 0;
-          return (
-            <details
-              key={key}
-              open
-              className="open:bg-white py-4 sm:m-4 p-5 dark:open:bg-zinc-900 open:ring-1 open:ring-black/5 open:shadow-lg sm:p-10 rounded-xl transition-all ease-in-out duration-200"
-            >
-              <summary className="text-xl p-2 leading-6 select-none">
-                {category.id}
-              </summary>
-              {posts.map((item) => {
-                if (item.frontmatter.category === category.id) {
-                  key += 1;
-                  return (
-                    <Link href={`/blog/${item.slug}`} key={key + 1}>
-                      <a className="my-2">
-                        <Card frontMatter={item.frontmatter} index={key} />
-                      </a>
-                    </Link>
-                  );
+    <Container frontmatter={meta}>
+      <div className="xl:py-36 h-[75vh]">
+        <div className="p-1 xl:p-3 pt-5 pb-10 w-full">
+          <div className=" md:flex flex-row justify-between items-center">
+            <Link href="/">
+              <div className="flex items-center justify-start py-5 cursor-pointer">
+                <div className="p-1 rounded-full border-gray-600 border-2 mx-2">
+                  <ArrowSVG style="w-6 h-6 rotate-180 text-600 dark:text-gray-200" />
+                </div>
+                <h1 className="text-xl pl-2 pr-4">Posts</h1>
+                <p className="text-md p-1 px-3 text-white rounded-full bg-blue-500">
+                  {posts.length}
+                </p>
+              </div>
+            </Link>
+            <div className="flex lg:justify-center items-center justify-start">
+              {categories.map((item, index) => (
+                <FilterPills
+                  key={index + 1}
+                  item={item}
+                  filter={filter}
+                  setFilter={setFilter}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="w-full">
+            {posts
+              .filter((item) => {
+                if (item.category === filter) {
+                  return item;
+                } else if (filter === "All") {
+                  return item;
                 }
+              })
+              .map((item, index) => {
+                return (
+                  <Link href={`/blog/${item.slug}`} key={index + 1}>
+                    <Card frontMatter={item} index={index + 1} />
+                  </Link>
+                );
               })}
-            </details>
-          );
-        })}
+          </div>
+        </div>
       </div>
-    </div>
+    </Container>
   );
 }
 
 export async function getStaticProps() {
-  const posts = await getAllFiles("posts");
-  const data = await getTitleFromFrontmatter(posts, "posts");
-  data.sort(
-    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-  );
+  const postData = returnSelectedFields(allPosts);
+  const posts = postData.sort((a, b) => new Date(b.date) - new Date(a.date));
   return {
     props: {
-      posts: data,
+      posts: posts.filter((item) => !item.draft),
     },
   };
 }

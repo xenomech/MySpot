@@ -30,8 +30,13 @@ class MyDocument extends Document {
           />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff"></meta>
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={`{"token":"${process.env.NEXT_PUBLIC_CLOUDFLARE_TOKEN}"}`}
+          ></script>
         </Head>
-        <body className="bg-white dark:bg-gray-900 dark:text-white text-black">
+        <body className="bg-white dark:bg-custom-900 dark:text-white text-black">
           <Main />
           <NextScript />
         </body>
